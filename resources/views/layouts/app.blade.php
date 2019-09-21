@@ -55,10 +55,28 @@
                     <aside>
                         <ul class="nav flex-column">
                             <li class="nav-item active">
-                                <router-link class="nav-link" to="/foo">Все</router-link>
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'tasks-all', params: { type: 'all' }}"
+                                >Все</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link class="nav-link" to="/bar">Сегодня</router-link>
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'tasks-today', params: { type: 'today' }}"
+                                >Сегодня</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'tasks-yesterday', params: { type: 'yesterday' }}"
+                                >Вчера</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'tasks-last-7-days', params: { type: 'last-7-days' }}"
+                                >Последние 7 дней</router-link>
                             </li>
                         </ul>
                     </aside>
