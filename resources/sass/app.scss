@@ -6,3 +6,19 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import "header";
+@import "aside";
+@import "main";
+@import "additional";
+
+* {
+    outline: 0 !important;
+}
+
+body {
+    background-image: url("/img/backgrounds/nature-compressed.jpg");
+    background-size: cover;
+    color: rgba(255,255,255,.7);
+    font-family: 'Comfortaa', cursive;
+}

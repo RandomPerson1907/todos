@@ -4,9 +4,18 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 require('./bootstrap');
+import VueRouter from "vue-router";
+import Vuex from "vuex";
+import router from "./router";
+
+//Components
+import SearchTask from "./components/SearchTask";
 
 window.Vue = require('vue');
+Vue.use(VueRouter);
+Vue.use(Vuex);
 
 /**
  * The following block of code may be used to automatically register your
@@ -28,5 +37,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {SearchTask},
+    router
 });

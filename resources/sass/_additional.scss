@@ -1,0 +1,21 @@
+.add__task {
+    margin: 0px auto 25px auto;
+
+    .add__task__button {
+        padding: 5px 20px;
+        border: 1px solid white;
+        border-radius: 60px;
+        background-color: white;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+        transition: $transition;
+
+        &:hover {
+            box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

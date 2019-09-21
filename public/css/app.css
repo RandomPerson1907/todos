@@ -10644,3 +10644,103 @@ a.text-dark:focus {
   }
 }
 
+header {
+  margin-bottom: 30px;
+  height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+header .header__block {
+  padding-top: 15px;
+}
+
+header .header__block .logo img {
+  height: 150px;
+  margin-top: -55px;
+}
+
+header .header__block .search__task .search__task__input input {
+  width: 50%;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+header .header__block .search__task .search__task__input input:hover,
+header .header__block .search__task .search__task__input input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+header .header__block .search__task .search__task__input input:focus {
+  width: 100%;
+}
+
+aside .nav .nav-item {
+  margin-top: 10px;
+  padding: 0;
+}
+
+aside .nav .nav-item .nav-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 6px 1rem 4px 1rem;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+aside .nav .nav-item .nav-link.router-link-active {
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+aside .nav .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+main {
+  padding: 25px;
+  height: calc(100vh - 130px);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000;
+}
+
+.add__task {
+  margin: 0px auto 25px auto;
+}
+
+.add__task .add__task__button {
+  padding: 5px 20px;
+  border: 1px solid white;
+  border-radius: 60px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.add__task .add__task__button:hover {
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+.add__task .add__task__button img {
+  width: 40px;
+  height: 40px;
+}
+
+* {
+  outline: 0 !important;
+}
+
+body {
+  background-image: url("/img/backgrounds/nature-compressed.jpg");
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Comfortaa", cursive;
+}
+
