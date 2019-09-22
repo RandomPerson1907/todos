@@ -10655,8 +10655,8 @@ header .header__block {
 }
 
 header .header__block .logo img {
-  height: 150px;
-  margin-top: -55px;
+  height: 35px;
+  margin-top: -5px;
 }
 
 header .header__block .search__task .search__task__input input {
@@ -10678,9 +10678,20 @@ header .header__block .search__task .search__task__input input:focus {
   width: 100%;
 }
 
+aside .nav {
+  padding: 25px;
+  height: calc(100vh - 250px);
+}
+
 aside .nav .nav-item {
+  min-height: 35px;
+  width: 100%;
+  overflow: hidden;
   margin-top: 10px;
   padding: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  font-size: 17px;
 }
 
 aside .nav .nav-item .nav-link {
@@ -10691,6 +10702,7 @@ aside .nav .nav-item .nav-link {
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
+  font-weight: 400;
   transition: all 0.3s ease-in-out;
 }
 
@@ -10710,13 +10722,13 @@ main {
   overflow: auto;
 }
 
-main .scroll-area {
+.scroll-area {
   position: relative;
   margin: auto;
   height: 100%;
 }
 
-main .empty-button {
+.empty-button {
   border: none;
   background: none;
 }

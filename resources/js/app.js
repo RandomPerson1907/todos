@@ -10,7 +10,8 @@ import VueRouter from "vue-router";
 import router from "./router";
 
 //Components
-import SearchTask from "./components/SearchTask";
+import SearchTaskComponent from "./components/SearchTaskComponent";
+import MenuComponent from "./components/MenuComponent";
 
 window.Vue = require('vue');
 Vue.use(VueRouter);
@@ -36,7 +37,7 @@ import store from "./store";
 
 const app = new Vue({
     el: '#app',
-    components: {SearchTask},
+    components: {SearchTaskComponent, MenuComponent},
     router,
     store
 });

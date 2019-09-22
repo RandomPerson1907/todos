@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Todo</title>
+    <link rel="icon" type="image/png" href="/img/logo_icon.png">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -27,13 +28,15 @@
                     <div class="col-md-3">
                         <div class="header__block">
                             <div class="logo d-flex justify-content-center">
-                                <img src="/img/logo_transparent.png" alt="Logotype">
+                                <router-link to="/">
+                                    <img src="/img/logo_croped.png" alt="Logotype">
+                                </router-link>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="header__block">
-                            <search-task></search-task>
+                            <search-task-component></search-task-component>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -53,59 +56,7 @@
                         </button>
                     </div>
                     <aside>
-                        <ul class="nav flex-column">
-                            <li class="nav-item active">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'tasks-all'}"
-                                >Все</router-link>
-                            </li>
-                            <li class="nav-item active">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'tasks-past-due'}"
-                                >Просроченные</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'tasks-today'}"
-                                >Сегодня</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'tasks-yesterday'}"
-                                >Вчера</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'tasks-last-7-days'}"
-                                >Последние 7 дней</router-link>
-                            </li>
-                            <li class="nav-item">
-                                Группы
-                            </li>
-                            <li class="nav-item">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'groups', params: {group: 'uncategorized'}}"
-                                >Без группы</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'groups', params: {group: 'work'}}"
-                                >Работа</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link
-                                    class="nav-link"
-                                    :to="{ name: 'groups', params: {group: 'studying'}}"
-                                >Учеба</router-link>
-                            </li>
-                        </ul>
+                        <menu-component></menu-component>
                     </aside>
                 </div>
                 <div class="col-md-9">

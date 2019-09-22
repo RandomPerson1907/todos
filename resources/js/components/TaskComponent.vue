@@ -2,11 +2,8 @@
     <div class="task__item">
         <div class="task__body">
             <div class="row h-100">
-                <div class="col-md-5 pr-0">
+                <div class="col-md-11 pr-0">
                     {{ task.title }}
-                </div>
-                <div class="col-md-6 pr-0">
-                    {{ task.body }}
                 </div>
                 <div class="col-md-1">
                     <div class="actions d-flex justify-content-end position-relative">

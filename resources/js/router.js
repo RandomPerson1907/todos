@@ -1,6 +1,7 @@
 import VueRouter from "vue-router";
 import TasksComponent from "./components/TasksComponent";
 import GroupComponent from "./components/GroupComponent";
+import PriorityComponent from "./components/PriorityComponent";
 
 const routes = [
     {
@@ -37,6 +38,11 @@ const routes = [
         name: "groups",
         path: '/groups/:group',
         component: GroupComponent
+    },
+    {
+        name: "priority",
+        path: '/priority/:priority',
+        component: PriorityComponent
     }
 ];
 

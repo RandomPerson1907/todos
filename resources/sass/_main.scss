@@ -3,15 +3,15 @@ main {
     height: calc(100vh - 250px);
     color: #000;
     overflow: auto;
+}
 
-    .scroll-area {
-        position: relative;
-        margin: auto;
-        height: 100%;
-    }
+.scroll-area {
+    position: relative;
+    margin: auto;
+    height: 100%;
+}
 
-    .empty-button {
-        border: none;
-        background: none;
-    }
+.empty-button {
+    border: none;
+    background: none;
 }

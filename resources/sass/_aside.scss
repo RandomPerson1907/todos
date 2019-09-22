@@ -1,8 +1,17 @@
 aside {
     .nav {
+        padding: 25px;
+        height: calc(100vh - 250px);
+
         .nav-item {
+            min-height: 35px;
+            width: 100%;
+            overflow: hidden;
             margin-top: 10px;
             padding: 0;
+            color: rgba(255,255,255,.9);
+            font-weight: 700;
+            font-size: 17px;
 
             .nav-link {
                 display: block;
@@ -12,6 +21,7 @@ aside {
                 border-radius: 10px;
                 color: rgba(255,255,255,.9);
                 font-size: 16px;
+                font-weight: 400;
                 transition: $transition;
 
                 &.router-link-active {
