@@ -1945,6 +1945,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TaskComponent",
@@ -1954,12 +2018,44 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      showAdditional: false
+      showAdditional: false,
+      priorities: [{
+        name: "Priority 1",
+        title: "Приоритет 1",
+        slug: "priority-1",
+        checked: true
+      }, {
+        name: "Priority 2",
+        title: "Приоритет 2",
+        slug: "priority-2",
+        checked: false
+      }, {
+        name: "Priority 3",
+        title: "Приоритет 3",
+        slug: "priority-3",
+        checked: false
+      }, {
+        name: "Priority 4",
+        title: "Приоритет 4",
+        slug: "priority-4",
+        checked: false
+      }]
     };
   },
   methods: {
     toggleAdditional: function toggleAdditional() {
       this.showAdditional = !this.showAdditional;
+    },
+    checkPriority: function checkPriority(priorityIndex) {
+      var _this = this;
+
+      this.priorities.forEach(function (item, index) {
+        if (item.checked) {
+          _this.priorities[index].checked = false;
+        } else if (index === priorityIndex) {
+          _this.priorities[index].checked = true;
+        }
+      });
     }
   }
 });
@@ -38165,35 +38261,124 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "task__item" }, [
-    _c("div", { staticClass: "row h-100" }, [
-      _c("div", { staticClass: "col-md-5 pr-0" }, [
-        _vm._v("\n            " + _vm._s(_vm.task.title) + "\n        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6 pr-0" }, [
-        _vm._v("\n            " + _vm._s(_vm.task.body) + "\n        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-1" }, [
-        _c(
-          "div",
-          {
-            staticClass: "actions d-flex justify-content-end position-relative"
-          },
-          [
-            _c("button", { on: { click: _vm.toggleAdditional } }, [
-              _c("img", {
-                attrs: { src: "/img/icons/more.png", alt: "Actions" }
-              })
-            ])
-          ]
-        )
+    _c("div", { staticClass: "task__body" }, [
+      _c("div", { staticClass: "row h-100" }, [
+        _c("div", { staticClass: "col-md-5 pr-0" }, [
+          _vm._v(
+            "\n                " + _vm._s(_vm.task.title) + "\n            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6 pr-0" }, [
+          _vm._v(
+            "\n                " + _vm._s(_vm.task.body) + "\n            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-1" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "actions d-flex justify-content-end position-relative"
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "empty-button",
+                  on: { click: _vm.toggleAdditional }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: "/img/icons/more.png", alt: "Actions" }
+                  })
+                ]
+              )
+            ]
+          )
+        ])
       ])
     ]),
     _vm._v(" "),
-    _vm.showAdditional
-      ? _c("div", { staticClass: "row" }, [_vm._m(0)])
-      : _vm._e()
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c(
+          "div",
+          {
+            staticClass: "additional-info",
+            class: { active: _vm.showAdditional }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-md-4" },
+                [
+                  _c("h4", [_vm._v("Срок")]),
+                  _vm._v(" "),
+                  _c("datepicker", {
+                    staticClass: "mb-3",
+                    attrs: { placeholder: "Дата начала задачи" }
+                  }),
+                  _vm._v(" "),
+                  _c("datepicker", {
+                    attrs: { placeholder: "Дата окончания задачи" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("h4", [_vm._v("Приоритет")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "priorities d-flex" },
+                  _vm._l(_vm.priorities, function(priority, index) {
+                    return _c(
+                      "div",
+                      {
+                        key: index,
+                        staticClass: "priority",
+                        class: { active: priority.checked },
+                        attrs: { title: priority.title }
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "empty-button",
+                            on: {
+                              click: function($event) {
+                                return _vm.checkPriority(index)
+                              }
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/img/icons/" + priority.slug + ".png",
+                                alt: priority.name
+                              }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ]
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -38201,9 +38386,95 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 p-0" }, [
-      _c("div", { staticClass: "additional-info" }, [
-        _vm._v("\n                Additional info\n            ")
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("h4", { staticClass: "text-center" }, [_vm._v("Действия")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "actions d-flex" }, [
+        _c("div", { staticClass: "action" }, [
+          _c(
+            "button",
+            {
+              staticClass: "empty-button",
+              attrs: { title: "Скопировать ссылку" }
+            },
+            [
+              _c("img", {
+                attrs: { src: "/img/icons/link.png", alt: "Copy link" }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "action" }, [
+          _c(
+            "button",
+            {
+              staticClass: "empty-button",
+              attrs: { title: "Перенести на завтра" }
+            },
+            [
+              _c("img", {
+                attrs: {
+                  src: "/img/icons/calendar.png",
+                  alt: "Move to tomorrow"
+                }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "action" }, [
+          _c(
+            "button",
+            { staticClass: "empty-button", attrs: { title: "Дублировать" } },
+            [
+              _c("img", {
+                attrs: { src: "/img/icons/duplicate.png", alt: "Duplicate" }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "action" }, [
+          _c(
+            "button",
+            {
+              staticClass: "empty-button",
+              attrs: { title: "Перенести в группу" }
+            },
+            [
+              _c("img", {
+                attrs: { src: "/img/icons/move.png", alt: "Move to group" }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "action" }, [
+          _c(
+            "button",
+            { staticClass: "empty-button", attrs: { title: "Удалить" } },
+            [
+              _c("img", {
+                attrs: { src: "/img/icons/delete.png", alt: "Delete" }
+              })
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 p-0" }, [
+        _c("button", { staticClass: "empty-button save p-0" }, [
+          _vm._v(
+            "\n                            Сохранить\n                        "
+          )
+        ])
       ])
     ])
   }
