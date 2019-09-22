@@ -60,6 +60,12 @@
                                     :to="{ name: 'tasks-all'}"
                                 >Все</router-link>
                             </li>
+                            <li class="nav-item active">
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'tasks-past-due'}"
+                                >Просроченные</router-link>
+                            </li>
                             <li class="nav-item">
                                 <router-link
                                     class="nav-link"
@@ -78,11 +84,32 @@
                                     :to="{ name: 'tasks-last-7-days'}"
                                 >Последние 7 дней</router-link>
                             </li>
+                            <li class="nav-item">
+                                Группы
+                            </li>
+                            <li class="nav-item">
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'groups', params: {group: 'uncategorized'}}"
+                                >Без группы</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'groups', params: {group: 'work'}}"
+                                >Работа</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link
+                                    class="nav-link"
+                                    :to="{ name: 'groups', params: {group: 'studying'}}"
+                                >Учеба</router-link>
+                            </li>
                         </ul>
                     </aside>
                 </div>
                 <div class="col-md-9">
-                    <main>
+                    <main class="p-0">
                     @yield("content")
                     </main>
                 </div>

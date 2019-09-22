@@ -1,7 +1,12 @@
 main {
     padding: 25px;
-    height: calc(100vh - 130px);
-    border-radius: 5px;
+    height: calc(100vh - 250px);
     color: #000;
     overflow: auto;
+
+    .scroll-area {
+        position: relative;
+        margin: auto;
+        height: 100%;
+    }
 }

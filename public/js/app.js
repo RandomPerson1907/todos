@@ -1863,6 +1863,28 @@ module.exports = function isBuffer (obj) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GroupComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GroupComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "GroupComponent",
+  mounted: function mounted() {
+    console.log(this.$route);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchTask.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchTask.vue?vue&type=script&lang=js& ***!
@@ -1886,6 +1908,64 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TaskComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TaskComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "TaskComponent",
+  props: ["task"],
+  components: {
+    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      showAdditional: false
+    };
+  },
+  methods: {
+    toggleAdditional: function toggleAdditional() {
+      this.showAdditional = !this.showAdditional;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TasksComponent.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TasksComponent.vue?vue&type=script&lang=js& ***!
@@ -1897,7 +1977,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _TaskComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TaskComponent */ "./resources/js/components/TaskComponent.vue");
+/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-custom-scrollbar */ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js");
+/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -1927,11 +2010,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["type"],
@@ -1939,8 +2019,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       title: "",
       body: "",
-      limit: 15
+      limit: 15,
+      settings: {
+        maxScrollbarLength: 60
+      }
     };
+  },
+  components: {
+    vueCustomScrollbar: vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2___default.a,
+    TaskComponent: _TaskComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   mounted: function () {
     var _mounted = _asyncToGenerator(
@@ -1977,7 +2064,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     }
   },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])(["createTask"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(["getTasks"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(["fetchTasks"]), {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapMutations"])(["createTask"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapGetters"])(["getTasks"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapActions"])(["fetchTasks"]), {
     submit: function submit() {
       this.createTask({
         title: this.title,
@@ -1985,24 +2072,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         id: Date.now()
       });
       this.title = this.body = "";
-    },
-    beforeEnter: function beforeEnter(el) {
-      el.style.opacity = 0;
-      el.style.height = 0;
-    },
-    enter: function enter(el, done) {
-      //var delay = el.tasks.index * 150
-      var delay = 150;
-      console.log(el);
-      /*setTimeout(function () {
-          Velocity(
-              el,
-              { opacity: 1, height: '1.6em' },
-              { complete: done }
-          )
-      }, delay)*/
-    },
-    leave: function leave(el, done) {}
+    }
   })
 });
 
@@ -38002,6 +38072,48 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function(t,e){ true?module.exports=e():undefined})("undefined"!==typeof self?self:this,function(){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var i=e[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"===typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var i in t)n.d(r,i,function(e){return t[e]}.bind(null,i));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t["default"]}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s="a667")}({"3ae1":function(t,e,n){"use strict";var r=n("f5fc"),i=n.n(r);i.a},"4ccc":function(t,e,n){e=t.exports=n("690e")(!1),e.push([t.i,".ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}.ps__rail-x{height:15px;bottom:0}.ps__rail-x,.ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;position:absolute}.ps__rail-y{width:15px;right:0}.ps--active-x>.ps__rail-x,.ps--active-y>.ps__rail-y{display:block;background-color:transparent}.ps--focus>.ps__rail-x,.ps--focus>.ps__rail-y,.ps--scrolling-x>.ps__rail-x,.ps--scrolling-y>.ps__rail-y,.ps:hover>.ps__rail-x,.ps:hover>.ps__rail-y{opacity:.6}.ps .ps__rail-x.ps--clicking,.ps .ps__rail-x:focus,.ps .ps__rail-x:hover,.ps .ps__rail-y.ps--clicking,.ps .ps__rail-y:focus,.ps .ps__rail-y:hover{background-color:#eee;opacity:.9}.ps__thumb-x{transition:background-color .2s linear,height .2s ease-in-out;-webkit-transition:background-color .2s linear,height .2s ease-in-out;height:6px;bottom:2px}.ps__thumb-x,.ps__thumb-y{background-color:#aaa;border-radius:6px;position:absolute}.ps__thumb-y{transition:background-color .2s linear,width .2s ease-in-out;-webkit-transition:background-color .2s linear,width .2s ease-in-out;width:6px;right:2px}.ps__rail-x.ps--clicking .ps__thumb-x,.ps__rail-x:focus>.ps__thumb-x,.ps__rail-x:hover>.ps__thumb-x{background-color:#999;height:11px}.ps__rail-y.ps--clicking .ps__thumb-y,.ps__rail-y:focus>.ps__thumb-y,.ps__rail-y:hover>.ps__thumb-y{background-color:#999;width:11px}@supports (-ms-overflow-style:none){.ps{overflow:auto!important}}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){.ps{overflow:auto!important}}",""])},"690e":function(t,e){function n(t,e){var n=t[1]||"",i=t[3];if(!i)return n;if(e&&"function"===typeof btoa){var o=r(i),l=i.sources.map(function(t){return"/*# sourceURL="+i.sourceRoot+t+" */"});return[n].concat(l).concat([o]).join("\n")}return[n].join("\n")}function r(t){var e=btoa(unescape(encodeURIComponent(JSON.stringify(t)))),n="sourceMappingURL=data:application/json;charset=utf-8;base64,"+e;return"/*# "+n+" */"}t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var r=n(e,t);return e[2]?"@media "+e[2]+"{"+r+"}":r}).join("")},e.i=function(t,n){"string"===typeof t&&(t=[[null,t,""]]);for(var r={},i=0;i<this.length;i++){var o=this[i][0];"number"===typeof o&&(r[o]=!0)}for(i=0;i<t.length;i++){var l=t[i];"number"===typeof l[0]&&r[l[0]]||(n&&!l[2]?l[2]=n:n&&(l[2]="("+l[2]+") and ("+n+")"),e.push(l))}},e}},"85cb":function(t,e,n){"use strict";function r(t,e){for(var n=[],r={},i=0;i<e.length;i++){var o=e[i],l=o[0],s=o[1],a=o[2],c=o[3],h={id:t+":"+i,css:s,media:a,sourceMap:c};r[l]?r[l].parts.push(h):n.push(r[l]={id:l,parts:[h]})}return n}n.r(e),n.d(e,"default",function(){return f});var i="undefined"!==typeof document;if("undefined"!==typeof DEBUG&&DEBUG&&!i)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var o={},l=i&&(document.head||document.getElementsByTagName("head")[0]),s=null,a=0,c=!1,h=function(){},u=null,d="data-vue-ssr-id",p="undefined"!==typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function f(t,e,n,i){c=n,u=i||{};var l=r(t,e);return b(l),function(e){for(var n=[],i=0;i<l.length;i++){var s=l[i],a=o[s.id];a.refs--,n.push(a)}e?(l=r(t,e),b(l)):l=[];for(i=0;i<n.length;i++){a=n[i];if(0===a.refs){for(var c=0;c<a.parts.length;c++)a.parts[c]();delete o[a.id]}}}}function b(t){for(var e=0;e<t.length;e++){var n=t[e],r=o[n.id];if(r){r.refs++;for(var i=0;i<r.parts.length;i++)r.parts[i](n.parts[i]);for(;i<n.parts.length;i++)r.parts.push(v(n.parts[i]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{var l=[];for(i=0;i<n.parts.length;i++)l.push(v(n.parts[i]));o[n.id]={id:n.id,refs:1,parts:l}}}}function g(){var t=document.createElement("style");return t.type="text/css",l.appendChild(t),t}function v(t){var e,n,r=document.querySelector("style["+d+'~="'+t.id+'"]');if(r){if(c)return h;r.parentNode.removeChild(r)}if(p){var i=a++;r=s||(s=g()),e=y.bind(null,r,i,!1),n=y.bind(null,r,i,!0)}else r=g(),e=_.bind(null,r),n=function(){r.parentNode.removeChild(r)};return e(t),function(r){if(r){if(r.css===t.css&&r.media===t.media&&r.sourceMap===t.sourceMap)return;e(t=r)}else n()}}var m=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}();function y(t,e,n,r){var i=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=m(e,i);else{var o=document.createTextNode(i),l=t.childNodes;l[e]&&t.removeChild(l[e]),l.length?t.insertBefore(o,l[e]):t.appendChild(o)}}function _(t,e){var n=e.css,r=e.media,i=e.sourceMap;if(r&&t.setAttribute("media",r),u.ssrId&&t.setAttribute(d,e.id),i&&(n+="\n/*# sourceURL="+i.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),t.styleSheet)t.styleSheet.cssText=n;else{while(t.firstChild)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}},"9d3c":function(t,e,n){e=t.exports=n("690e")(!1),e.i(n("4ccc"),""),e.push([t.i,".ps-container{position:relative}",""])},a667:function(t,e,n){"use strict";var r;(n.r(e),"undefined"!==typeof window)&&(n("e67d"),(r=window.document.currentScript)&&(r=r.src.match(/(.+\/)[^\/]+\.js(\?.*)?$/))&&(n.p=r[1]));var i=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n(t.$props.tagname,{tag:"section",staticClass:"ps-container",on:{"ps-scroll-y":t.scrollHandle,"ps-scroll-x":t.scrollHandle,"ps-scroll-up":t.scrollHandle,"ps-scroll-down":t.scrollHandle,"ps-scroll-left":t.scrollHandle,"ps-scroll-right":t.scrollHandle,"ps-y-reach-start":t.scrollHandle,"ps-y-reach-end":t.scrollHandle,"ps-x-reach-start":t.scrollHandle,"ps-x-reach-end":t.scrollHandle}},[t._t("default")],2)},o=[];
+/*!
+ * perfect-scrollbar v1.4.0
+ * (c) 2018 Hyunje Jun
+ * @license MIT
+ */
+function l(t){return getComputedStyle(t)}function s(t,e){for(var n in e){var r=e[n];"number"===typeof r&&(r+="px"),t.style[n]=r}return t}function a(t){var e=document.createElement("div");return e.className=t,e}var c="undefined"!==typeof Element&&(Element.prototype.matches||Element.prototype.webkitMatchesSelector||Element.prototype.mozMatchesSelector||Element.prototype.msMatchesSelector);function h(t,e){if(!c)throw new Error("No element matching method supported");return c.call(t,e)}function u(t){t.remove?t.remove():t.parentNode&&t.parentNode.removeChild(t)}function d(t,e){return Array.prototype.filter.call(t.children,function(t){return h(t,e)})}var p={main:"ps",element:{thumb:function(t){return"ps__thumb-"+t},rail:function(t){return"ps__rail-"+t},consuming:"ps__child--consume"},state:{focus:"ps--focus",clicking:"ps--clicking",active:function(t){return"ps--active-"+t},scrolling:function(t){return"ps--scrolling-"+t}}},f={x:null,y:null};function b(t,e){var n=t.element.classList,r=p.state.scrolling(e);n.contains(r)?clearTimeout(f[e]):n.add(r)}function g(t,e){f[e]=setTimeout(function(){return t.isAlive&&t.element.classList.remove(p.state.scrolling(e))},t.settings.scrollingThreshold)}function v(t,e){b(t,e),g(t,e)}var m=function(t){this.element=t,this.handlers={}},y={isEmpty:{configurable:!0}};m.prototype.bind=function(t,e){"undefined"===typeof this.handlers[t]&&(this.handlers[t]=[]),this.handlers[t].push(e),this.element.addEventListener(t,e,!1)},m.prototype.unbind=function(t,e){var n=this;this.handlers[t]=this.handlers[t].filter(function(r){return!(!e||r===e)||(n.element.removeEventListener(t,r,!1),!1)})},m.prototype.unbindAll=function(){var t=this;for(var e in t.handlers)t.unbind(e)},y.isEmpty.get=function(){var t=this;return Object.keys(this.handlers).every(function(e){return 0===t.handlers[e].length})},Object.defineProperties(m.prototype,y);var _=function(){this.eventElements=[]};function w(t){if("function"===typeof window.CustomEvent)return new CustomEvent(t);var e=document.createEvent("CustomEvent");return e.initCustomEvent(t,!1,!1,void 0),e}_.prototype.eventElement=function(t){var e=this.eventElements.filter(function(e){return e.element===t})[0];return e||(e=new m(t),this.eventElements.push(e)),e},_.prototype.bind=function(t,e,n){this.eventElement(t).bind(e,n)},_.prototype.unbind=function(t,e,n){var r=this.eventElement(t);r.unbind(e,n),r.isEmpty&&this.eventElements.splice(this.eventElements.indexOf(r),1)},_.prototype.unbindAll=function(){this.eventElements.forEach(function(t){return t.unbindAll()}),this.eventElements=[]},_.prototype.once=function(t,e,n){var r=this.eventElement(t),i=function(t){r.unbind(e,i),n(t)};r.bind(e,i)};var Y=function(t,e,n,r,i){var o;if(void 0===r&&(r=!0),void 0===i&&(i=!1),"top"===e)o=["contentHeight","containerHeight","scrollTop","y","up","down"];else{if("left"!==e)throw new Error("A proper axis should be provided");o=["contentWidth","containerWidth","scrollLeft","x","left","right"]}X(t,n,o,r,i)};function X(t,e,n,r,i){var o=n[0],l=n[1],s=n[2],a=n[3],c=n[4],h=n[5];void 0===r&&(r=!0),void 0===i&&(i=!1);var u=t.element;t.reach[a]=null,u[s]<1&&(t.reach[a]="start"),u[s]>t[o]-t[l]-1&&(t.reach[a]="end"),e&&(u.dispatchEvent(w("ps-scroll-"+a)),e<0?u.dispatchEvent(w("ps-scroll-"+c)):e>0&&u.dispatchEvent(w("ps-scroll-"+h)),r&&v(t,a)),t.reach[a]&&(e||i)&&u.dispatchEvent(w("ps-"+a+"-reach-"+t.reach[a]))}function x(t){return parseInt(t,10)||0}function W(t){return h(t,"input,[contenteditable]")||h(t,"select,[contenteditable]")||h(t,"textarea,[contenteditable]")||h(t,"button,[contenteditable]")}function S(t){var e=l(t);return x(e.width)+x(e.paddingLeft)+x(e.paddingRight)+x(e.borderLeftWidth)+x(e.borderRightWidth)}var L={isWebKit:"undefined"!==typeof document&&"WebkitAppearance"in document.documentElement.style,supportsTouch:"undefined"!==typeof window&&("ontouchstart"in window||window.DocumentTouch&&document instanceof window.DocumentTouch),supportsIePointer:"undefined"!==typeof navigator&&navigator.msMaxTouchPoints,isChrome:"undefined"!==typeof navigator&&/Chrome/i.test(navigator&&navigator.userAgent)},R=function(t){var e=t.element,n=Math.floor(e.scrollTop);t.containerWidth=e.clientWidth,t.containerHeight=e.clientHeight,t.contentWidth=e.scrollWidth,t.contentHeight=e.scrollHeight,e.contains(t.scrollbarXRail)||(d(e,p.element.rail("x")).forEach(function(t){return u(t)}),e.appendChild(t.scrollbarXRail)),e.contains(t.scrollbarYRail)||(d(e,p.element.rail("y")).forEach(function(t){return u(t)}),e.appendChild(t.scrollbarYRail)),!t.settings.suppressScrollX&&t.containerWidth+t.settings.scrollXMarginOffset<t.contentWidth?(t.scrollbarXActive=!0,t.railXWidth=t.containerWidth-t.railXMarginWidth,t.railXRatio=t.containerWidth/t.railXWidth,t.scrollbarXWidth=T(t,x(t.railXWidth*t.containerWidth/t.contentWidth)),t.scrollbarXLeft=x((t.negativeScrollAdjustment+e.scrollLeft)*(t.railXWidth-t.scrollbarXWidth)/(t.contentWidth-t.containerWidth))):t.scrollbarXActive=!1,!t.settings.suppressScrollY&&t.containerHeight+t.settings.scrollYMarginOffset<t.contentHeight?(t.scrollbarYActive=!0,t.railYHeight=t.containerHeight-t.railYMarginHeight,t.railYRatio=t.containerHeight/t.railYHeight,t.scrollbarYHeight=T(t,x(t.railYHeight*t.containerHeight/t.contentHeight)),t.scrollbarYTop=x(n*(t.railYHeight-t.scrollbarYHeight)/(t.contentHeight-t.containerHeight))):t.scrollbarYActive=!1,t.scrollbarXLeft>=t.railXWidth-t.scrollbarXWidth&&(t.scrollbarXLeft=t.railXWidth-t.scrollbarXWidth),t.scrollbarYTop>=t.railYHeight-t.scrollbarYHeight&&(t.scrollbarYTop=t.railYHeight-t.scrollbarYHeight),H(e,t),t.scrollbarXActive?e.classList.add(p.state.active("x")):(e.classList.remove(p.state.active("x")),t.scrollbarXWidth=0,t.scrollbarXLeft=0,e.scrollLeft=0),t.scrollbarYActive?e.classList.add(p.state.active("y")):(e.classList.remove(p.state.active("y")),t.scrollbarYHeight=0,t.scrollbarYTop=0,e.scrollTop=0)};function T(t,e){return t.settings.minScrollbarLength&&(e=Math.max(e,t.settings.minScrollbarLength)),t.settings.maxScrollbarLength&&(e=Math.min(e,t.settings.maxScrollbarLength)),e}function H(t,e){var n={width:e.railXWidth},r=Math.floor(t.scrollTop);e.isRtl?n.left=e.negativeScrollAdjustment+t.scrollLeft+e.containerWidth-e.contentWidth:n.left=t.scrollLeft,e.isScrollbarXUsingBottom?n.bottom=e.scrollbarXBottom-r:n.top=e.scrollbarXTop+r,s(e.scrollbarXRail,n);var i={top:r,height:e.railYHeight};e.isScrollbarYUsingRight?e.isRtl?i.right=e.contentWidth-(e.negativeScrollAdjustment+t.scrollLeft)-e.scrollbarYRight-e.scrollbarYOuterWidth:i.right=e.scrollbarYRight-t.scrollLeft:e.isRtl?i.left=e.negativeScrollAdjustment+t.scrollLeft+2*e.containerWidth-e.contentWidth-e.scrollbarYLeft-e.scrollbarYOuterWidth:i.left=e.scrollbarYLeft+t.scrollLeft,s(e.scrollbarYRail,i),s(e.scrollbarX,{left:e.scrollbarXLeft,width:e.scrollbarXWidth-e.railBorderXWidth}),s(e.scrollbarY,{top:e.scrollbarYTop,height:e.scrollbarYHeight-e.railBorderYWidth})}var E=function(t){t.event.bind(t.scrollbarY,"mousedown",function(t){return t.stopPropagation()}),t.event.bind(t.scrollbarYRail,"mousedown",function(e){var n=e.pageY-window.pageYOffset-t.scrollbarYRail.getBoundingClientRect().top,r=n>t.scrollbarYTop?1:-1;t.element.scrollTop+=r*t.containerHeight,R(t),e.stopPropagation()}),t.event.bind(t.scrollbarX,"mousedown",function(t){return t.stopPropagation()}),t.event.bind(t.scrollbarXRail,"mousedown",function(e){var n=e.pageX-window.pageXOffset-t.scrollbarXRail.getBoundingClientRect().left,r=n>t.scrollbarXLeft?1:-1;t.element.scrollLeft+=r*t.containerWidth,R(t),e.stopPropagation()})},M=function(t){k(t,["containerWidth","contentWidth","pageX","railXWidth","scrollbarX","scrollbarXWidth","scrollLeft","x","scrollbarXRail"]),k(t,["containerHeight","contentHeight","pageY","railYHeight","scrollbarY","scrollbarYHeight","scrollTop","y","scrollbarYRail"])};function k(t,e){var n=e[0],r=e[1],i=e[2],o=e[3],l=e[4],s=e[5],a=e[6],c=e[7],h=e[8],u=t.element,d=null,f=null,v=null;function m(e){u[a]=d+v*(e[i]-f),b(t,c),R(t),e.stopPropagation(),e.preventDefault()}function y(){g(t,c),t[h].classList.remove(p.state.clicking),t.event.unbind(t.ownerDocument,"mousemove",m)}t.event.bind(t[l],"mousedown",function(e){d=u[a],f=e[i],v=(t[r]-t[n])/(t[o]-t[s]),t.event.bind(t.ownerDocument,"mousemove",m),t.event.once(t.ownerDocument,"mouseup",y),t[h].classList.add(p.state.clicking),e.stopPropagation(),e.preventDefault()})}var A=function(t){var e=t.element,n=function(){return h(e,":hover")},r=function(){return h(t.scrollbarX,":focus")||h(t.scrollbarY,":focus")};function i(n,r){var i=Math.floor(e.scrollTop);if(0===n){if(!t.scrollbarYActive)return!1;if(0===i&&r>0||i>=t.contentHeight-t.containerHeight&&r<0)return!t.settings.wheelPropagation}var o=e.scrollLeft;if(0===r){if(!t.scrollbarXActive)return!1;if(0===o&&n<0||o>=t.contentWidth-t.containerWidth&&n>0)return!t.settings.wheelPropagation}return!0}t.event.bind(t.ownerDocument,"keydown",function(o){if(!(o.isDefaultPrevented&&o.isDefaultPrevented()||o.defaultPrevented)&&(n()||r())){var l=document.activeElement?document.activeElement:t.ownerDocument.activeElement;if(l){if("IFRAME"===l.tagName)l=l.contentDocument.activeElement;else while(l.shadowRoot)l=l.shadowRoot.activeElement;if(W(l))return}var s=0,a=0;switch(o.which){case 37:s=o.metaKey?-t.contentWidth:o.altKey?-t.containerWidth:-30;break;case 38:a=o.metaKey?t.contentHeight:o.altKey?t.containerHeight:30;break;case 39:s=o.metaKey?t.contentWidth:o.altKey?t.containerWidth:30;break;case 40:a=o.metaKey?-t.contentHeight:o.altKey?-t.containerHeight:-30;break;case 32:a=o.shiftKey?t.containerHeight:-t.containerHeight;break;case 33:a=t.containerHeight;break;case 34:a=-t.containerHeight;break;case 36:a=t.contentHeight;break;case 35:a=-t.contentHeight;break;default:return}t.settings.suppressScrollX&&0!==s||t.settings.suppressScrollY&&0!==a||(e.scrollTop-=a,e.scrollLeft+=s,R(t),i(s,a)&&o.preventDefault())}})},C=function(t){var e=t.element;function n(n,r){var i,o=Math.floor(e.scrollTop),l=0===e.scrollTop,s=o+e.offsetHeight===e.scrollHeight,a=0===e.scrollLeft,c=e.scrollLeft+e.offsetWidth===e.scrollWidth;return i=Math.abs(r)>Math.abs(n)?l||s:a||c,!i||!t.settings.wheelPropagation}function r(t){var e=t.deltaX,n=-1*t.deltaY;return"undefined"!==typeof e&&"undefined"!==typeof n||(e=-1*t.wheelDeltaX/6,n=t.wheelDeltaY/6),t.deltaMode&&1===t.deltaMode&&(e*=10,n*=10),e!==e&&n!==n&&(e=0,n=t.wheelDelta),t.shiftKey?[-n,-e]:[e,n]}function i(t,n,r){if(!L.isWebKit&&e.querySelector("select:focus"))return!0;if(!e.contains(t))return!1;var i=t;while(i&&i!==e){if(i.classList.contains(p.element.consuming))return!0;var o=l(i),s=[o.overflow,o.overflowX,o.overflowY].join("");if(s.match(/(scroll|auto)/)){var a=i.scrollHeight-i.clientHeight;if(a>0&&!(0===i.scrollTop&&r>0)&&!(i.scrollTop===a&&r<0))return!0;var c=i.scrollWidth-i.clientWidth;if(c>0&&!(0===i.scrollLeft&&n<0)&&!(i.scrollLeft===c&&n>0))return!0}i=i.parentNode}return!1}function o(o){var l=r(o),s=l[0],a=l[1];if(!i(o.target,s,a)){var c=!1;t.settings.useBothWheelAxes?t.scrollbarYActive&&!t.scrollbarXActive?(a?e.scrollTop-=a*t.settings.wheelSpeed:e.scrollTop+=s*t.settings.wheelSpeed,c=!0):t.scrollbarXActive&&!t.scrollbarYActive&&(s?e.scrollLeft+=s*t.settings.wheelSpeed:e.scrollLeft-=a*t.settings.wheelSpeed,c=!0):(e.scrollTop-=a*t.settings.wheelSpeed,e.scrollLeft+=s*t.settings.wheelSpeed),R(t),c=c||n(s,a),c&&!o.ctrlKey&&(o.stopPropagation(),o.preventDefault())}}"undefined"!==typeof window.onwheel?t.event.bind(e,"wheel",o):"undefined"!==typeof window.onmousewheel&&t.event.bind(e,"mousewheel",o)},P=function(t){if(L.supportsTouch||L.supportsIePointer){var e=t.element,n={},r=0,i={},o=null;L.supportsTouch?(t.event.bind(e,"touchstart",u),t.event.bind(e,"touchmove",f),t.event.bind(e,"touchend",b)):L.supportsIePointer&&(window.PointerEvent?(t.event.bind(e,"pointerdown",u),t.event.bind(e,"pointermove",f),t.event.bind(e,"pointerup",b)):window.MSPointerEvent&&(t.event.bind(e,"MSPointerDown",u),t.event.bind(e,"MSPointerMove",f),t.event.bind(e,"MSPointerUp",b)))}function s(n,r){var i=Math.floor(e.scrollTop),o=e.scrollLeft,l=Math.abs(n),s=Math.abs(r);if(s>l){if(r<0&&i===t.contentHeight-t.containerHeight||r>0&&0===i)return 0===window.scrollY&&r>0&&L.isChrome}else if(l>s&&(n<0&&o===t.contentWidth-t.containerWidth||n>0&&0===o))return!0;return!0}function a(n,r){e.scrollTop-=r,e.scrollLeft-=n,R(t)}function c(t){return t.targetTouches?t.targetTouches[0]:t}function h(t){return(!t.pointerType||"pen"!==t.pointerType||0!==t.buttons)&&(!(!t.targetTouches||1!==t.targetTouches.length)||!(!t.pointerType||"mouse"===t.pointerType||t.pointerType===t.MSPOINTER_TYPE_MOUSE))}function u(t){if(h(t)){var e=c(t);n.pageX=e.pageX,n.pageY=e.pageY,r=(new Date).getTime(),null!==o&&clearInterval(o)}}function d(t,n,r){if(!e.contains(t))return!1;var i=t;while(i&&i!==e){if(i.classList.contains(p.element.consuming))return!0;var o=l(i),s=[o.overflow,o.overflowX,o.overflowY].join("");if(s.match(/(scroll|auto)/)){var a=i.scrollHeight-i.clientHeight;if(a>0&&!(0===i.scrollTop&&r>0)&&!(i.scrollTop===a&&r<0))return!0;var c=i.scrollLeft-i.clientWidth;if(c>0&&!(0===i.scrollLeft&&n<0)&&!(i.scrollLeft===c&&n>0))return!0}i=i.parentNode}return!1}function f(t){if(h(t)){var e=c(t),o={pageX:e.pageX,pageY:e.pageY},l=o.pageX-n.pageX,u=o.pageY-n.pageY;if(d(t.target,l,u))return;a(l,u),n=o;var p=(new Date).getTime(),f=p-r;f>0&&(i.x=l/f,i.y=u/f,r=p),s(l,u)&&t.preventDefault()}}function b(){t.settings.swipeEasing&&(clearInterval(o),o=setInterval(function(){t.isInitialized?clearInterval(o):i.x||i.y?Math.abs(i.x)<.01&&Math.abs(i.y)<.01?clearInterval(o):(a(30*i.x,30*i.y),i.x*=.8,i.y*=.8):clearInterval(o)},10))}},j=function(){return{handlers:["click-rail","drag-thumb","keyboard","wheel","touch"],maxScrollbarLength:null,minScrollbarLength:null,scrollingThreshold:1e3,scrollXMarginOffset:0,scrollYMarginOffset:0,suppressScrollX:!1,suppressScrollY:!1,swipeEasing:!0,useBothWheelAxes:!1,wheelPropagation:!0,wheelSpeed:1}},N={"click-rail":E,"drag-thumb":M,keyboard:A,wheel:C,touch:P},D=function(t,e){var n=this;if(void 0===e&&(e={}),"string"===typeof t&&(t=document.querySelector(t)),!t||!t.nodeName)throw new Error("no element is specified to initialize PerfectScrollbar");for(var r in this.element=t,t.classList.add(p.main),this.settings=j(),e)n.settings[r]=e[r];this.containerWidth=null,this.containerHeight=null,this.contentWidth=null,this.contentHeight=null;var i=function(){return t.classList.add(p.state.focus)},o=function(){return t.classList.remove(p.state.focus)};this.isRtl="rtl"===l(t).direction,this.isNegativeScroll=function(){var e=t.scrollLeft,n=null;return t.scrollLeft=-1,n=t.scrollLeft<0,t.scrollLeft=e,n}(),this.negativeScrollAdjustment=this.isNegativeScroll?t.scrollWidth-t.clientWidth:0,this.event=new _,this.ownerDocument=t.ownerDocument||document,this.scrollbarXRail=a(p.element.rail("x")),t.appendChild(this.scrollbarXRail),this.scrollbarX=a(p.element.thumb("x")),this.scrollbarXRail.appendChild(this.scrollbarX),this.scrollbarX.setAttribute("tabindex",0),this.event.bind(this.scrollbarX,"focus",i),this.event.bind(this.scrollbarX,"blur",o),this.scrollbarXActive=null,this.scrollbarXWidth=null,this.scrollbarXLeft=null;var c=l(this.scrollbarXRail);this.scrollbarXBottom=parseInt(c.bottom,10),isNaN(this.scrollbarXBottom)?(this.isScrollbarXUsingBottom=!1,this.scrollbarXTop=x(c.top)):this.isScrollbarXUsingBottom=!0,this.railBorderXWidth=x(c.borderLeftWidth)+x(c.borderRightWidth),s(this.scrollbarXRail,{display:"block"}),this.railXMarginWidth=x(c.marginLeft)+x(c.marginRight),s(this.scrollbarXRail,{display:""}),this.railXWidth=null,this.railXRatio=null,this.scrollbarYRail=a(p.element.rail("y")),t.appendChild(this.scrollbarYRail),this.scrollbarY=a(p.element.thumb("y")),this.scrollbarYRail.appendChild(this.scrollbarY),this.scrollbarY.setAttribute("tabindex",0),this.event.bind(this.scrollbarY,"focus",i),this.event.bind(this.scrollbarY,"blur",o),this.scrollbarYActive=null,this.scrollbarYHeight=null,this.scrollbarYTop=null;var h=l(this.scrollbarYRail);this.scrollbarYRight=parseInt(h.right,10),isNaN(this.scrollbarYRight)?(this.isScrollbarYUsingRight=!1,this.scrollbarYLeft=x(h.left)):this.isScrollbarYUsingRight=!0,this.scrollbarYOuterWidth=this.isRtl?S(this.scrollbarY):null,this.railBorderYWidth=x(h.borderTopWidth)+x(h.borderBottomWidth),s(this.scrollbarYRail,{display:"block"}),this.railYMarginHeight=x(h.marginTop)+x(h.marginBottom),s(this.scrollbarYRail,{display:""}),this.railYHeight=null,this.railYRatio=null,this.reach={x:t.scrollLeft<=0?"start":t.scrollLeft>=this.contentWidth-this.containerWidth?"end":null,y:t.scrollTop<=0?"start":t.scrollTop>=this.contentHeight-this.containerHeight?"end":null},this.isAlive=!0,this.settings.handlers.forEach(function(t){return N[t](n)}),this.lastScrollTop=Math.floor(t.scrollTop),this.lastScrollLeft=t.scrollLeft,this.event.bind(this.element,"scroll",function(t){return n.onScroll(t)}),R(this)};D.prototype.update=function(){this.isAlive&&(this.negativeScrollAdjustment=this.isNegativeScroll?this.element.scrollWidth-this.element.clientWidth:0,s(this.scrollbarXRail,{display:"block"}),s(this.scrollbarYRail,{display:"block"}),this.railXMarginWidth=x(l(this.scrollbarXRail).marginLeft)+x(l(this.scrollbarXRail).marginRight),this.railYMarginHeight=x(l(this.scrollbarYRail).marginTop)+x(l(this.scrollbarYRail).marginBottom),s(this.scrollbarXRail,{display:"none"}),s(this.scrollbarYRail,{display:"none"}),R(this),Y(this,"top",0,!1,!0),Y(this,"left",0,!1,!0),s(this.scrollbarXRail,{display:""}),s(this.scrollbarYRail,{display:""}))},D.prototype.onScroll=function(t){this.isAlive&&(R(this),Y(this,"top",this.element.scrollTop-this.lastScrollTop),Y(this,"left",this.element.scrollLeft-this.lastScrollLeft),this.lastScrollTop=Math.floor(this.element.scrollTop),this.lastScrollLeft=this.element.scrollLeft)},D.prototype.destroy=function(){this.isAlive&&(this.event.unbindAll(),u(this.scrollbarX),u(this.scrollbarY),u(this.scrollbarXRail),u(this.scrollbarYRail),this.removePsClasses(),this.element=null,this.scrollbarX=null,this.scrollbarY=null,this.scrollbarXRail=null,this.scrollbarYRail=null,this.isAlive=!1)},D.prototype.removePsClasses=function(){this.element.className=this.element.className.split(" ").filter(function(t){return!t.match(/^ps([-_].+|)$/)}).join(" ")};var O=D,B={name:"vue-custom-scrollbar",props:{settings:{default:null},swicher:{type:Boolean,default:!0},tagname:{type:String,default:"section"}},data:function(){return{ps:null}},methods:{scrollHandle:function(t){this.$emit(t.type,t)},update:function(){this.ps&&this.ps.update()},__init:function(){this.swicher&&(this._ps_inited?this.ps.update():(this._ps_inited=!0,this.ps=new O(this.$el,this.settings)))},__uninit:function(){this.ps&&(this.ps.destroy(),this.ps=null,this._ps_inited=!1)}},watch:{swicher:function(t){t&&!this._ps_inited&&this.__init(),!t&&this._ps_inited&&this.__uninit()},settings:{deep:!0,handler:function(){this.__uninit(),this.__init()}},$route:function(){this.update()}},mounted:function(){this.$isServer||this.__init()},updated:function(){this.$nextTick(this.update)},activated:function(){this.__init()},deactivated:function(){this.__uninit()},beforeDestroy:function(){this.__uninit()}},I=B;n("3ae1");function U(t,e,n,r,i,o,l,s){var a,c="function"===typeof t?t.options:t;if(e&&(c.render=e,c.staticRenderFns=n,c._compiled=!0),r&&(c.functional=!0),o&&(c._scopeId="data-v-"+o),l?(a=function(t){t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,t||"undefined"===typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),i&&i.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(l)},c._ssrRegister=a):i&&(a=s?function(){i.call(this,this.$root.$options.shadowRoot)}:i),a)if(c.functional){c._injectStyles=a;var h=c.render;c.render=function(t,e){return a.call(e),h(t,e)}}else{var u=c.beforeCreate;c.beforeCreate=u?[].concat(u,a):[a]}return{exports:t,options:c}}var $=U(I,i,o,!1,null,null,null),K=$.exports;e["default"]=K},e67d:function(t,e){(function(t){var e="currentScript",n=t.getElementsByTagName("script");e in t||Object.defineProperty(t,e,{get:function(){try{throw new Error}catch(r){var t,e=(/.*at [^\(]*\((.*):.+:.+\)$/gi.exec(r.stack)||[!1])[1];for(t in n)if(n[t].src==e||"interactive"==n[t].readyState)return n[t];return null}}})})(document)},f5fc:function(t,e,n){var r=n("9d3c");"string"===typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);var i=n("85cb").default;i("4cb9b1f6",r,!0,{sourceMap:!1,shadowMode:!1})}})["default"]});
+//# sourceMappingURL=vueScrollbar.umd.min.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchTask.vue?vue&type=template&id=188f8d10&":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchTask.vue?vue&type=template&id=188f8d10& ***!
@@ -38037,6 +38149,71 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "task__item" }, [
+    _c("div", { staticClass: "row h-100" }, [
+      _c("div", { staticClass: "col-md-5 pr-0" }, [
+        _vm._v("\n            " + _vm._s(_vm.task.title) + "\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 pr-0" }, [
+        _vm._v("\n            " + _vm._s(_vm.task.body) + "\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-1" }, [
+        _c(
+          "div",
+          {
+            staticClass: "actions d-flex justify-content-end position-relative"
+          },
+          [
+            _c("button", { on: { click: _vm.toggleAdditional } }, [
+              _c("img", {
+                attrs: { src: "/img/icons/more.png", alt: "Actions" }
+              })
+            ])
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _vm.showAdditional
+      ? _c("div", { staticClass: "row" }, [_vm._m(0)])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12 p-0" }, [
+      _c("div", { staticClass: "additional-info" }, [
+        _vm._v("\n                Additional info\n            ")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TasksComponent.vue?vue&type=template&id=8f69a68c&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TasksComponent.vue?vue&type=template&id=8f69a68c& ***!
@@ -38052,34 +38229,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tasks" }, [
-    _c(
-      "div",
-      { staticClass: "tasks__list" },
-      _vm._l(_vm.getTasks(), function(task, index) {
-        return _c("div", { key: index, staticClass: "task" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-5" }, [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(task.title) +
-                  "\n                    "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-7" }, [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(task.body) +
-                  "\n                    "
-              )
-            ])
-          ])
-        ])
-      }),
-      0
-    )
-  ])
+  return _c(
+    "vue-custom-scrollbar",
+    { staticClass: "scroll-area", attrs: { settings: _vm.settings } },
+    [
+      _c("div", { staticClass: "tasks" }, [
+        _c(
+          "div",
+          { staticClass: "tasks__list" },
+          _vm._l(_vm.getTasks(), function(task, index) {
+            return _c(
+              "div",
+              { key: index, staticClass: "task" },
+              [_c("task-component", { attrs: { task: task } })],
+              1
+            )
+          }),
+          0
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -53055,6 +53225,2456 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+var Language =
+/*#__PURE__*/
+function () {
+  function Language(language, months, monthsAbbr, days) {
+    _classCallCheck(this, Language);
+
+    this.language = language;
+    this.months = months;
+    this.monthsAbbr = monthsAbbr;
+    this.days = days;
+    this.rtl = false;
+    this.ymd = false;
+    this.yearSuffix = '';
+  }
+
+  _createClass(Language, [{
+    key: "language",
+    get: function get() {
+      return this._language;
+    },
+    set: function set(language) {
+      if (typeof language !== 'string') {
+        throw new TypeError('Language must be a string');
+      }
+
+      this._language = language;
+    }
+  }, {
+    key: "months",
+    get: function get() {
+      return this._months;
+    },
+    set: function set(months) {
+      if (months.length !== 12) {
+        throw new RangeError("There must be 12 months for ".concat(this.language, " language"));
+      }
+
+      this._months = months;
+    }
+  }, {
+    key: "monthsAbbr",
+    get: function get() {
+      return this._monthsAbbr;
+    },
+    set: function set(monthsAbbr) {
+      if (monthsAbbr.length !== 12) {
+        throw new RangeError("There must be 12 abbreviated months for ".concat(this.language, " language"));
+      }
+
+      this._monthsAbbr = monthsAbbr;
+    }
+  }, {
+    key: "days",
+    get: function get() {
+      return this._days;
+    },
+    set: function set(days) {
+      if (days.length !== 7) {
+        throw new RangeError("There must be 7 days for ".concat(this.language, " language"));
+      }
+
+      this._days = days;
+    }
+  }]);
+
+  return Language;
+}(); // eslint-disable-next-line
+
+var en = new Language('English', ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']) // eslint-disable-next-line
+;
+
+var utils = {
+  /**
+   * @type {Boolean}
+   */
+  useUtc: false,
+
+  /**
+   * Returns the full year, using UTC or not
+   * @param {Date} date
+   */
+  getFullYear: function getFullYear(date) {
+    return this.useUtc ? date.getUTCFullYear() : date.getFullYear();
+  },
+
+  /**
+   * Returns the month, using UTC or not
+   * @param {Date} date
+   */
+  getMonth: function getMonth(date) {
+    return this.useUtc ? date.getUTCMonth() : date.getMonth();
+  },
+
+  /**
+   * Returns the date, using UTC or not
+   * @param {Date} date
+   */
+  getDate: function getDate(date) {
+    return this.useUtc ? date.getUTCDate() : date.getDate();
+  },
+
+  /**
+   * Returns the day, using UTC or not
+   * @param {Date} date
+   */
+  getDay: function getDay(date) {
+    return this.useUtc ? date.getUTCDay() : date.getDay();
+  },
+
+  /**
+   * Returns the hours, using UTC or not
+   * @param {Date} date
+   */
+  getHours: function getHours(date) {
+    return this.useUtc ? date.getUTCHours() : date.getHours();
+  },
+
+  /**
+   * Returns the minutes, using UTC or not
+   * @param {Date} date
+   */
+  getMinutes: function getMinutes(date) {
+    return this.useUtc ? date.getUTCMinutes() : date.getMinutes();
+  },
+
+  /**
+   * Sets the full year, using UTC or not
+   * @param {Date} date
+   */
+  setFullYear: function setFullYear(date, value, useUtc) {
+    return this.useUtc ? date.setUTCFullYear(value) : date.setFullYear(value);
+  },
+
+  /**
+   * Sets the month, using UTC or not
+   * @param {Date} date
+   */
+  setMonth: function setMonth(date, value, useUtc) {
+    return this.useUtc ? date.setUTCMonth(value) : date.setMonth(value);
+  },
+
+  /**
+   * Sets the date, using UTC or not
+   * @param {Date} date
+   * @param {Number} value
+   */
+  setDate: function setDate(date, value, useUtc) {
+    return this.useUtc ? date.setUTCDate(value) : date.setDate(value);
+  },
+
+  /**
+   * Check if date1 is equivalent to date2, without comparing the time
+   * @see https://stackoverflow.com/a/6202196/4455925
+   * @param {Date} date1
+   * @param {Date} date2
+   */
+  compareDates: function compareDates(date1, date2) {
+    var d1 = new Date(date1.getTime());
+    var d2 = new Date(date2.getTime());
+
+    if (this.useUtc) {
+      d1.setUTCHours(0, 0, 0, 0);
+      d2.setUTCHours(0, 0, 0, 0);
+    } else {
+      d1.setHours(0, 0, 0, 0);
+      d2.setHours(0, 0, 0, 0);
+    }
+
+    return d1.getTime() === d2.getTime();
+  },
+
+  /**
+   * Validates a date object
+   * @param {Date} date - an object instantiated with the new Date constructor
+   * @return {Boolean}
+   */
+  isValidDate: function isValidDate(date) {
+    if (Object.prototype.toString.call(date) !== '[object Date]') {
+      return false;
+    }
+
+    return !isNaN(date.getTime());
+  },
+
+  /**
+   * Return abbreviated week day name
+   * @param {Date}
+   * @param {Array}
+   * @return {String}
+   */
+  getDayNameAbbr: function getDayNameAbbr(date, days) {
+    if (_typeof(date) !== 'object') {
+      throw TypeError('Invalid Type');
+    }
+
+    return days[this.getDay(date)];
+  },
+
+  /**
+   * Return name of the month
+   * @param {Number|Date}
+   * @param {Array}
+   * @return {String}
+   */
+  getMonthName: function getMonthName(month, months) {
+    if (!months) {
+      throw Error('missing 2nd parameter Months array');
+    }
+
+    if (_typeof(month) === 'object') {
+      return months[this.getMonth(month)];
+    }
+
+    if (typeof month === 'number') {
+      return months[month];
+    }
+
+    throw TypeError('Invalid type');
+  },
+
+  /**
+   * Return an abbreviated version of the month
+   * @param {Number|Date}
+   * @return {String}
+   */
+  getMonthNameAbbr: function getMonthNameAbbr(month, monthsAbbr) {
+    if (!monthsAbbr) {
+      throw Error('missing 2nd paramter Months array');
+    }
+
+    if (_typeof(month) === 'object') {
+      return monthsAbbr[this.getMonth(month)];
+    }
+
+    if (typeof month === 'number') {
+      return monthsAbbr[month];
+    }
+
+    throw TypeError('Invalid type');
+  },
+
+  /**
+   * Alternative get total number of days in month
+   * @param {Number} year
+   * @param {Number} m
+   * @return {Number}
+   */
+  daysInMonth: function daysInMonth(year, month) {
+    return /8|3|5|10/.test(month) ? 30 : month === 1 ? !(year % 4) && year % 100 || !(year % 400) ? 29 : 28 : 31;
+  },
+
+  /**
+   * Get nth suffix for date
+   * @param {Number} day
+   * @return {String}
+   */
+  getNthSuffix: function getNthSuffix(day) {
+    switch (day) {
+      case 1:
+      case 21:
+      case 31:
+        return 'st';
+
+      case 2:
+      case 22:
+        return 'nd';
+
+      case 3:
+      case 23:
+        return 'rd';
+
+      default:
+        return 'th';
+    }
+  },
+
+  /**
+   * Formats date object
+   * @param {Date}
+   * @param {String}
+   * @param {Object}
+   * @return {String}
+   */
+  formatDate: function formatDate(date, format, translation) {
+    translation = !translation ? en : translation;
+    var year = this.getFullYear(date);
+    var month = this.getMonth(date) + 1;
+    var day = this.getDate(date);
+    var str = format.replace(/dd/, ('0' + day).slice(-2)).replace(/d/, day).replace(/yyyy/, year).replace(/yy/, String(year).slice(2)).replace(/MMMM/, this.getMonthName(this.getMonth(date), translation.months)).replace(/MMM/, this.getMonthNameAbbr(this.getMonth(date), translation.monthsAbbr)).replace(/MM/, ('0' + month).slice(-2)).replace(/M(?!a|ä|e)/, month).replace(/su/, this.getNthSuffix(this.getDate(date))).replace(/D(?!e|é|i)/, this.getDayNameAbbr(date, translation.days));
+    return str;
+  },
+
+  /**
+   * Creates an array of dates for each day in between two dates.
+   * @param {Date} start
+   * @param {Date} end
+   * @return {Array}
+   */
+  createDateArray: function createDateArray(start, end) {
+    var dates = [];
+
+    while (start <= end) {
+      dates.push(new Date(start));
+      start = this.setDate(new Date(start), this.getDate(new Date(start)) + 1);
+    }
+
+    return dates;
+  },
+
+  /**
+   * method used as a prop validator for input values
+   * @param {*} val
+   * @return {Boolean}
+   */
+  validateDateInput: function validateDateInput(val) {
+    return val === null || val instanceof Date || typeof val === 'string' || typeof val === 'number';
+  }
+};
+var makeDateUtils = function makeDateUtils(useUtc) {
+  return _objectSpread({}, utils, {
+    useUtc: useUtc
+  });
+};
+var utils$1 = _objectSpread({}, utils) // eslint-disable-next-line
+;
+
+var script = {
+  props: {
+    selectedDate: Date,
+    resetTypedDate: [Date],
+    format: [String, Function],
+    translation: Object,
+    inline: Boolean,
+    id: String,
+    name: String,
+    refName: String,
+    openDate: Date,
+    placeholder: String,
+    inputClass: [String, Object, Array],
+    clearButton: Boolean,
+    clearButtonIcon: String,
+    calendarButton: Boolean,
+    calendarButtonIcon: String,
+    calendarButtonIconContent: String,
+    disabled: Boolean,
+    required: Boolean,
+    typeable: Boolean,
+    bootstrapStyling: Boolean,
+    useUtc: Boolean
+  },
+  data: function data() {
+    var constructedDateUtils = makeDateUtils(this.useUtc);
+    return {
+      input: null,
+      typedDate: false,
+      utils: constructedDateUtils
+    };
+  },
+  computed: {
+    formattedValue: function formattedValue() {
+      if (!this.selectedDate) {
+        return null;
+      }
+
+      if (this.typedDate) {
+        return this.typedDate;
+      }
+
+      return typeof this.format === 'function' ? this.format(this.selectedDate) : this.utils.formatDate(new Date(this.selectedDate), this.format, this.translation);
+    },
+    computedInputClass: function computedInputClass() {
+      if (this.bootstrapStyling) {
+        if (typeof this.inputClass === 'string') {
+          return [this.inputClass, 'form-control'].join(' ');
+        }
+
+        return _objectSpread({
+          'form-control': true
+        }, this.inputClass);
+      }
+
+      return this.inputClass;
+    }
+  },
+  watch: {
+    resetTypedDate: function resetTypedDate() {
+      this.typedDate = false;
+    }
+  },
+  methods: {
+    showCalendar: function showCalendar() {
+      this.$emit('showCalendar');
+    },
+
+    /**
+     * Attempt to parse a typed date
+     * @param {Event} event
+     */
+    parseTypedDate: function parseTypedDate(event) {
+      // close calendar if escape or enter are pressed
+      if ([27, // escape
+      13 // enter
+      ].includes(event.keyCode)) {
+        this.input.blur();
+      }
+
+      if (this.typeable) {
+        var typedDate = Date.parse(this.input.value);
+
+        if (!isNaN(typedDate)) {
+          this.typedDate = this.input.value;
+          this.$emit('typedDate', new Date(this.typedDate));
+        }
+      }
+    },
+
+    /**
+     * nullify the typed date to defer to regular formatting
+     * called once the input is blurred
+     */
+    inputBlurred: function inputBlurred() {
+      if (this.typeable && isNaN(Date.parse(this.input.value))) {
+        this.clearDate();
+        this.input.value = null;
+        this.typedDate = null;
+      }
+
+      this.$emit('closeCalendar');
+    },
+
+    /**
+     * emit a clearDate event
+     */
+    clearDate: function clearDate() {
+      this.$emit('clearDate');
+    }
+  },
+  mounted: function mounted() {
+    this.input = this.$el.querySelector('input');
+  }
+} // eslint-disable-next-line
+;
+
+function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
+/* server only */
+, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+  if (typeof shadowMode !== 'boolean') {
+    createInjectorSSR = createInjector;
+    createInjector = shadowMode;
+    shadowMode = false;
+  } // Vue.extend constructor export interop.
+
+
+  var options = typeof script === 'function' ? script.options : script; // render functions
+
+  if (template && template.render) {
+    options.render = template.render;
+    options.staticRenderFns = template.staticRenderFns;
+    options._compiled = true; // functional template
+
+    if (isFunctionalTemplate) {
+      options.functional = true;
+    }
+  } // scopedId
+
+
+  if (scopeId) {
+    options._scopeId = scopeId;
+  }
+
+  var hook;
+
+  if (moduleIdentifier) {
+    // server build
+    hook = function hook(context) {
+      // 2.3 injection
+      context = context || // cached call
+      this.$vnode && this.$vnode.ssrContext || // stateful
+      this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext; // functional
+      // 2.2 with runInNewContext: true
+
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__;
+      } // inject component styles
+
+
+      if (style) {
+        style.call(this, createInjectorSSR(context));
+      } // register component module identifier for async chunk inference
+
+
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier);
+      }
+    }; // used by ssr in case component is cached and beforeCreate
+    // never gets called
+
+
+    options._ssrRegister = hook;
+  } else if (style) {
+    hook = shadowMode ? function () {
+      style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
+    } : function (context) {
+      style.call(this, createInjector(context));
+    };
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // register for functional component in vue file
+      var originalRender = options.render;
+
+      options.render = function renderWithStyleInjection(h, context) {
+        hook.call(context);
+        return originalRender(h, context);
+      };
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate;
+      options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+    }
+  }
+
+  return script;
+}
+
+var normalizeComponent_1 = normalizeComponent;
+
+/* script */
+const __vue_script__ = script;
+
+/* template */
+var __vue_render__ = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    { class: { "input-group": _vm.bootstrapStyling } },
+    [
+      _vm.calendarButton
+        ? _c(
+            "span",
+            {
+              staticClass: "vdp-datepicker__calendar-button",
+              class: { "input-group-prepend": _vm.bootstrapStyling },
+              style: { "cursor:not-allowed;": _vm.disabled },
+              on: { click: _vm.showCalendar }
+            },
+            [
+              _c(
+                "span",
+                { class: { "input-group-text": _vm.bootstrapStyling } },
+                [
+                  _c("i", { class: _vm.calendarButtonIcon }, [
+                    _vm._v(
+                      "\n        " +
+                        _vm._s(_vm.calendarButtonIconContent) +
+                        "\n        "
+                    ),
+                    !_vm.calendarButtonIcon
+                      ? _c("span", [_vm._v("…")])
+                      : _vm._e()
+                  ])
+                ]
+              )
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("input", {
+        ref: _vm.refName,
+        class: _vm.computedInputClass,
+        attrs: {
+          type: _vm.inline ? "hidden" : "text",
+          name: _vm.name,
+          id: _vm.id,
+          "open-date": _vm.openDate,
+          placeholder: _vm.placeholder,
+          "clear-button": _vm.clearButton,
+          disabled: _vm.disabled,
+          required: _vm.required,
+          readonly: !_vm.typeable,
+          autocomplete: "off"
+        },
+        domProps: { value: _vm.formattedValue },
+        on: {
+          click: _vm.showCalendar,
+          keyup: _vm.parseTypedDate,
+          blur: _vm.inputBlurred
+        }
+      }),
+      _vm._v(" "),
+      _vm.clearButton && _vm.selectedDate
+        ? _c(
+            "span",
+            {
+              staticClass: "vdp-datepicker__clear-button",
+              class: { "input-group-append": _vm.bootstrapStyling },
+              on: {
+                click: function($event) {
+                  return _vm.clearDate()
+                }
+              }
+            },
+            [
+              _c(
+                "span",
+                { class: { "input-group-text": _vm.bootstrapStyling } },
+                [
+                  _c("i", { class: _vm.clearButtonIcon }, [
+                    !_vm.clearButtonIcon ? _c("span", [_vm._v("×")]) : _vm._e()
+                  ])
+                ]
+              )
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm._t("afterDateInput")
+    ],
+    2
+  )
+};
+var __vue_staticRenderFns__ = [];
+__vue_render__._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__ = undefined;
+  /* scoped */
+  const __vue_scope_id__ = undefined;
+  /* module identifier */
+  const __vue_module_identifier__ = undefined;
+  /* functional template */
+  const __vue_is_functional_template__ = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var DateInput = normalizeComponent_1(
+    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+    __vue_inject_styles__,
+    __vue_script__,
+    __vue_scope_id__,
+    __vue_is_functional_template__,
+    __vue_module_identifier__,
+    undefined,
+    undefined
+  );
+
+//
+var script$1 = {
+  props: {
+    showDayView: Boolean,
+    selectedDate: Date,
+    pageDate: Date,
+    pageTimestamp: Number,
+    fullMonthName: Boolean,
+    allowedToShowView: Function,
+    dayCellContent: {
+      type: Function,
+      "default": function _default(day) {
+        return day.date;
+      }
+    },
+    disabledDates: Object,
+    highlighted: Object,
+    calendarClass: [String, Object, Array],
+    calendarStyle: Object,
+    translation: Object,
+    isRtl: Boolean,
+    mondayFirst: Boolean,
+    useUtc: Boolean
+  },
+  data: function data() {
+    var constructedDateUtils = makeDateUtils(this.useUtc);
+    return {
+      utils: constructedDateUtils
+    };
+  },
+  computed: {
+    /**
+     * Returns an array of day names
+     * @return {String[]}
+     */
+    daysOfWeek: function daysOfWeek() {
+      if (this.mondayFirst) {
+        var tempDays = this.translation.days.slice();
+        tempDays.push(tempDays.shift());
+        return tempDays;
+      }
+
+      return this.translation.days;
+    },
+
+    /**
+     * Returns the day number of the week less one for the first of the current month
+     * Used to show amount of empty cells before the first in the day calendar layout
+     * @return {Number}
+     */
+    blankDays: function blankDays() {
+      var d = this.pageDate;
+      var dObj = this.useUtc ? new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1)) : new Date(d.getFullYear(), d.getMonth(), 1, d.getHours(), d.getMinutes());
+
+      if (this.mondayFirst) {
+        return this.utils.getDay(dObj) > 0 ? this.utils.getDay(dObj) - 1 : 6;
+      }
+
+      return this.utils.getDay(dObj);
+    },
+
+    /**
+     * @return {Object[]}
+     */
+    days: function days() {
+      var d = this.pageDate;
+      var days = []; // set up a new date object to the beginning of the current 'page'
+
+      var dObj = this.useUtc ? new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1)) : new Date(d.getFullYear(), d.getMonth(), 1, d.getHours(), d.getMinutes());
+      var daysInMonth = this.utils.daysInMonth(this.utils.getFullYear(dObj), this.utils.getMonth(dObj));
+
+      for (var i = 0; i < daysInMonth; i++) {
+        days.push({
+          date: this.utils.getDate(dObj),
+          timestamp: dObj.getTime(),
+          isSelected: this.isSelectedDate(dObj),
+          isDisabled: this.isDisabledDate(dObj),
+          isHighlighted: this.isHighlightedDate(dObj),
+          isHighlightStart: this.isHighlightStart(dObj),
+          isHighlightEnd: this.isHighlightEnd(dObj),
+          isToday: this.utils.compareDates(dObj, new Date()),
+          isWeekend: this.utils.getDay(dObj) === 0 || this.utils.getDay(dObj) === 6,
+          isSaturday: this.utils.getDay(dObj) === 6,
+          isSunday: this.utils.getDay(dObj) === 0
+        });
+        this.utils.setDate(dObj, this.utils.getDate(dObj) + 1);
+      }
+
+      return days;
+    },
+
+    /**
+     * Gets the name of the month the current page is on
+     * @return {String}
+     */
+    currMonthName: function currMonthName() {
+      var monthName = this.fullMonthName ? this.translation.months : this.translation.monthsAbbr;
+      return this.utils.getMonthNameAbbr(this.utils.getMonth(this.pageDate), monthName);
+    },
+
+    /**
+     * Gets the name of the year that current page is on
+     * @return {Number}
+     */
+    currYearName: function currYearName() {
+      var yearSuffix = this.translation.yearSuffix;
+      return "".concat(this.utils.getFullYear(this.pageDate)).concat(yearSuffix);
+    },
+
+    /**
+     * Is this translation using year/month/day format?
+     * @return {Boolean}
+     */
+    isYmd: function isYmd() {
+      return this.translation.ymd && this.translation.ymd === true;
+    },
+
+    /**
+     * Is the left hand navigation button disabled?
+     * @return {Boolean}
+     */
+    isLeftNavDisabled: function isLeftNavDisabled() {
+      return this.isRtl ? this.isNextMonthDisabled(this.pageTimestamp) : this.isPreviousMonthDisabled(this.pageTimestamp);
+    },
+
+    /**
+     * Is the right hand navigation button disabled?
+     * @return {Boolean}
+     */
+    isRightNavDisabled: function isRightNavDisabled() {
+      return this.isRtl ? this.isPreviousMonthDisabled(this.pageTimestamp) : this.isNextMonthDisabled(this.pageTimestamp);
+    }
+  },
+  methods: {
+    selectDate: function selectDate(date) {
+      if (date.isDisabled) {
+        this.$emit('selectedDisabled', date);
+        return false;
+      }
+
+      this.$emit('selectDate', date);
+    },
+
+    /**
+     * @return {Number}
+     */
+    getPageMonth: function getPageMonth() {
+      return this.utils.getMonth(this.pageDate);
+    },
+
+    /**
+     * Emit an event to show the month picker
+     */
+    showMonthCalendar: function showMonthCalendar() {
+      this.$emit('showMonthCalendar');
+    },
+
+    /**
+     * Change the page month
+     * @param {Number} incrementBy
+     */
+    changeMonth: function changeMonth(incrementBy) {
+      var date = this.pageDate;
+      this.utils.setMonth(date, this.utils.getMonth(date) + incrementBy);
+      this.$emit('changedMonth', date);
+    },
+
+    /**
+     * Decrement the page month
+     */
+    previousMonth: function previousMonth() {
+      if (!this.isPreviousMonthDisabled()) {
+        this.changeMonth(-1);
+      }
+    },
+
+    /**
+     * Is the previous month disabled?
+     * @return {Boolean}
+     */
+    isPreviousMonthDisabled: function isPreviousMonthDisabled() {
+      if (!this.disabledDates || !this.disabledDates.to) {
+        return false;
+      }
+
+      var d = this.pageDate;
+      return this.utils.getMonth(this.disabledDates.to) >= this.utils.getMonth(d) && this.utils.getFullYear(this.disabledDates.to) >= this.utils.getFullYear(d);
+    },
+
+    /**
+     * Increment the current page month
+     */
+    nextMonth: function nextMonth() {
+      if (!this.isNextMonthDisabled()) {
+        this.changeMonth(+1);
+      }
+    },
+
+    /**
+     * Is the next month disabled?
+     * @return {Boolean}
+     */
+    isNextMonthDisabled: function isNextMonthDisabled() {
+      if (!this.disabledDates || !this.disabledDates.from) {
+        return false;
+      }
+
+      var d = this.pageDate;
+      return this.utils.getMonth(this.disabledDates.from) <= this.utils.getMonth(d) && this.utils.getFullYear(this.disabledDates.from) <= this.utils.getFullYear(d);
+    },
+
+    /**
+     * Whether a day is selected
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isSelectedDate: function isSelectedDate(dObj) {
+      return this.selectedDate && this.utils.compareDates(this.selectedDate, dObj);
+    },
+
+    /**
+     * Whether a day is disabled
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isDisabledDate: function isDisabledDate(date) {
+      var _this = this;
+
+      var disabledDates = false;
+
+      if (typeof this.disabledDates === 'undefined') {
+        return false;
+      }
+
+      if (typeof this.disabledDates.dates !== 'undefined') {
+        this.disabledDates.dates.forEach(function (d) {
+          if (_this.utils.compareDates(date, d)) {
+            disabledDates = true;
+            return true;
+          }
+        });
+      }
+
+      if (typeof this.disabledDates.to !== 'undefined' && this.disabledDates.to && date < this.disabledDates.to) {
+        disabledDates = true;
+      }
+
+      if (typeof this.disabledDates.from !== 'undefined' && this.disabledDates.from && date > this.disabledDates.from) {
+        disabledDates = true;
+      }
+
+      if (typeof this.disabledDates.ranges !== 'undefined') {
+        this.disabledDates.ranges.forEach(function (range) {
+          if (typeof range.from !== 'undefined' && range.from && typeof range.to !== 'undefined' && range.to) {
+            if (date < range.to && date > range.from) {
+              disabledDates = true;
+              return true;
+            }
+          }
+        });
+      }
+
+      if (typeof this.disabledDates.days !== 'undefined' && this.disabledDates.days.indexOf(this.utils.getDay(date)) !== -1) {
+        disabledDates = true;
+      }
+
+      if (typeof this.disabledDates.daysOfMonth !== 'undefined' && this.disabledDates.daysOfMonth.indexOf(this.utils.getDate(date)) !== -1) {
+        disabledDates = true;
+      }
+
+      if (typeof this.disabledDates.customPredictor === 'function' && this.disabledDates.customPredictor(date)) {
+        disabledDates = true;
+      }
+
+      return disabledDates;
+    },
+
+    /**
+     * Whether a day is highlighted (only if it is not disabled already except when highlighted.includeDisabled is true)
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isHighlightedDate: function isHighlightedDate(date) {
+      var _this2 = this;
+
+      if (!(this.highlighted && this.highlighted.includeDisabled) && this.isDisabledDate(date)) {
+        return false;
+      }
+
+      var highlighted = false;
+
+      if (typeof this.highlighted === 'undefined') {
+        return false;
+      }
+
+      if (typeof this.highlighted.dates !== 'undefined') {
+        this.highlighted.dates.forEach(function (d) {
+          if (_this2.utils.compareDates(date, d)) {
+            highlighted = true;
+            return true;
+          }
+        });
+      }
+
+      if (this.isDefined(this.highlighted.from) && this.isDefined(this.highlighted.to)) {
+        highlighted = date >= this.highlighted.from && date <= this.highlighted.to;
+      }
+
+      if (typeof this.highlighted.days !== 'undefined' && this.highlighted.days.indexOf(this.utils.getDay(date)) !== -1) {
+        highlighted = true;
+      }
+
+      if (typeof this.highlighted.daysOfMonth !== 'undefined' && this.highlighted.daysOfMonth.indexOf(this.utils.getDate(date)) !== -1) {
+        highlighted = true;
+      }
+
+      if (typeof this.highlighted.customPredictor === 'function' && this.highlighted.customPredictor(date)) {
+        highlighted = true;
+      }
+
+      return highlighted;
+    },
+    dayClasses: function dayClasses(day) {
+      return {
+        'selected': day.isSelected,
+        'disabled': day.isDisabled,
+        'highlighted': day.isHighlighted,
+        'today': day.isToday,
+        'weekend': day.isWeekend,
+        'sat': day.isSaturday,
+        'sun': day.isSunday,
+        'highlight-start': day.isHighlightStart,
+        'highlight-end': day.isHighlightEnd
+      };
+    },
+
+    /**
+     * Whether a day is highlighted and it is the first date
+     * in the highlighted range of dates
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isHighlightStart: function isHighlightStart(date) {
+      return this.isHighlightedDate(date) && this.highlighted.from instanceof Date && this.utils.getFullYear(this.highlighted.from) === this.utils.getFullYear(date) && this.utils.getMonth(this.highlighted.from) === this.utils.getMonth(date) && this.utils.getDate(this.highlighted.from) === this.utils.getDate(date);
+    },
+
+    /**
+     * Whether a day is highlighted and it is the first date
+     * in the highlighted range of dates
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isHighlightEnd: function isHighlightEnd(date) {
+      return this.isHighlightedDate(date) && this.highlighted.to instanceof Date && this.utils.getFullYear(this.highlighted.to) === this.utils.getFullYear(date) && this.utils.getMonth(this.highlighted.to) === this.utils.getMonth(date) && this.utils.getDate(this.highlighted.to) === this.utils.getDate(date);
+    },
+
+    /**
+     * Helper
+     * @param  {mixed}  prop
+     * @return {Boolean}
+     */
+    isDefined: function isDefined(prop) {
+      return typeof prop !== 'undefined' && prop;
+    }
+  } // eslint-disable-next-line
+
+};
+
+/* script */
+const __vue_script__$1 = script$1;
+
+/* template */
+var __vue_render__$1 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.showDayView,
+          expression: "showDayView"
+        }
+      ],
+      class: [_vm.calendarClass, "vdp-datepicker__calendar"],
+      style: _vm.calendarStyle,
+      on: {
+        mousedown: function($event) {
+          $event.preventDefault();
+        }
+      }
+    },
+    [
+      _vm._t("beforeCalendarHeader"),
+      _vm._v(" "),
+      _c("header", [
+        _c(
+          "span",
+          {
+            staticClass: "prev",
+            class: { disabled: _vm.isLeftNavDisabled },
+            on: {
+              click: function($event) {
+                _vm.isRtl ? _vm.nextMonth() : _vm.previousMonth();
+              }
+            }
+          },
+          [_vm._v("<")]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "day__month_btn",
+            class: _vm.allowedToShowView("month") ? "up" : "",
+            on: { click: _vm.showMonthCalendar }
+          },
+          [
+            _vm._v(
+              _vm._s(_vm.isYmd ? _vm.currYearName : _vm.currMonthName) +
+                " " +
+                _vm._s(_vm.isYmd ? _vm.currMonthName : _vm.currYearName)
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "next",
+            class: { disabled: _vm.isRightNavDisabled },
+            on: {
+              click: function($event) {
+                _vm.isRtl ? _vm.previousMonth() : _vm.nextMonth();
+              }
+            }
+          },
+          [_vm._v(">")]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { class: _vm.isRtl ? "flex-rtl" : "" },
+        [
+          _vm._l(_vm.daysOfWeek, function(d) {
+            return _c(
+              "span",
+              { key: d.timestamp, staticClass: "cell day-header" },
+              [_vm._v(_vm._s(d))]
+            )
+          }),
+          _vm._v(" "),
+          _vm.blankDays > 0
+            ? _vm._l(_vm.blankDays, function(d) {
+                return _c("span", {
+                  key: d.timestamp,
+                  staticClass: "cell day blank"
+                })
+              })
+            : _vm._e(),
+          _vm._l(_vm.days, function(day) {
+            return _c("span", {
+              key: day.timestamp,
+              staticClass: "cell day",
+              class: _vm.dayClasses(day),
+              domProps: { innerHTML: _vm._s(_vm.dayCellContent(day)) },
+              on: {
+                click: function($event) {
+                  return _vm.selectDate(day)
+                }
+              }
+            })
+          })
+        ],
+        2
+      )
+    ],
+    2
+  )
+};
+var __vue_staticRenderFns__$1 = [];
+__vue_render__$1._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$1 = undefined;
+  /* scoped */
+  const __vue_scope_id__$1 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$1 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$1 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var PickerDay = normalizeComponent_1(
+    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+    __vue_inject_styles__$1,
+    __vue_script__$1,
+    __vue_scope_id__$1,
+    __vue_is_functional_template__$1,
+    __vue_module_identifier__$1,
+    undefined,
+    undefined
+  );
+
+//
+var script$2 = {
+  props: {
+    showMonthView: Boolean,
+    selectedDate: Date,
+    pageDate: Date,
+    pageTimestamp: Number,
+    disabledDates: Object,
+    calendarClass: [String, Object, Array],
+    calendarStyle: Object,
+    translation: Object,
+    isRtl: Boolean,
+    allowedToShowView: Function,
+    useUtc: Boolean
+  },
+  data: function data() {
+    var constructedDateUtils = makeDateUtils(this.useUtc);
+    return {
+      utils: constructedDateUtils
+    };
+  },
+  computed: {
+    months: function months() {
+      var d = this.pageDate;
+      var months = []; // set up a new date object to the beginning of the current 'page'
+
+      var dObj = this.useUtc ? new Date(Date.UTC(d.getUTCFullYear(), 0, d.getUTCDate())) : new Date(d.getFullYear(), 0, d.getDate(), d.getHours(), d.getMinutes());
+
+      for (var i = 0; i < 12; i++) {
+        months.push({
+          month: this.utils.getMonthName(i, this.translation.months),
+          timestamp: dObj.getTime(),
+          isSelected: this.isSelectedMonth(dObj),
+          isDisabled: this.isDisabledMonth(dObj)
+        });
+        this.utils.setMonth(dObj, this.utils.getMonth(dObj) + 1);
+      }
+
+      return months;
+    },
+
+    /**
+     * Get year name on current page.
+     * @return {String}
+     */
+    pageYearName: function pageYearName() {
+      var yearSuffix = this.translation.yearSuffix;
+      return "".concat(this.utils.getFullYear(this.pageDate)).concat(yearSuffix);
+    },
+
+    /**
+     * Is the left hand navigation disabled
+     * @return {Boolean}
+     */
+    isLeftNavDisabled: function isLeftNavDisabled() {
+      return this.isRtl ? this.isNextYearDisabled(this.pageTimestamp) : this.isPreviousYearDisabled(this.pageTimestamp);
+    },
+
+    /**
+     * Is the right hand navigation disabled
+     * @return {Boolean}
+     */
+    isRightNavDisabled: function isRightNavDisabled() {
+      return this.isRtl ? this.isPreviousYearDisabled(this.pageTimestamp) : this.isNextYearDisabled(this.pageTimestamp);
+    }
+  },
+  methods: {
+    /**
+     * Emits a selectMonth event
+     * @param {Object} month
+     */
+    selectMonth: function selectMonth(month) {
+      if (month.isDisabled) {
+        return false;
+      }
+
+      this.$emit('selectMonth', month);
+    },
+
+    /**
+     * Changes the year up or down
+     * @param {Number} incrementBy
+     */
+    changeYear: function changeYear(incrementBy) {
+      var date = this.pageDate;
+      this.utils.setFullYear(date, this.utils.getFullYear(date) + incrementBy);
+      this.$emit('changedYear', date);
+    },
+
+    /**
+     * Decrements the year
+     */
+    previousYear: function previousYear() {
+      if (!this.isPreviousYearDisabled()) {
+        this.changeYear(-1);
+      }
+    },
+
+    /**
+     * Checks if the previous year is disabled or not
+     * @return {Boolean}
+     */
+    isPreviousYearDisabled: function isPreviousYearDisabled() {
+      if (!this.disabledDates || !this.disabledDates.to) {
+        return false;
+      }
+
+      return this.utils.getFullYear(this.disabledDates.to) >= this.utils.getFullYear(this.pageDate);
+    },
+
+    /**
+     * Increments the year
+     */
+    nextYear: function nextYear() {
+      if (!this.isNextYearDisabled()) {
+        this.changeYear(1);
+      }
+    },
+
+    /**
+     * Checks if the next year is disabled or not
+     * @return {Boolean}
+     */
+    isNextYearDisabled: function isNextYearDisabled() {
+      if (!this.disabledDates || !this.disabledDates.from) {
+        return false;
+      }
+
+      return this.utils.getFullYear(this.disabledDates.from) <= this.utils.getFullYear(this.pageDate);
+    },
+
+    /**
+     * Emits an event that shows the year calendar
+     */
+    showYearCalendar: function showYearCalendar() {
+      this.$emit('showYearCalendar');
+    },
+
+    /**
+     * Whether the selected date is in this month
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isSelectedMonth: function isSelectedMonth(date) {
+      return this.selectedDate && this.utils.getFullYear(this.selectedDate) === this.utils.getFullYear(date) && this.utils.getMonth(this.selectedDate) === this.utils.getMonth(date);
+    },
+
+    /**
+     * Whether a month is disabled
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isDisabledMonth: function isDisabledMonth(date) {
+      var disabledDates = false;
+
+      if (typeof this.disabledDates === 'undefined') {
+        return false;
+      }
+
+      if (typeof this.disabledDates.to !== 'undefined' && this.disabledDates.to) {
+        if (this.utils.getMonth(date) < this.utils.getMonth(this.disabledDates.to) && this.utils.getFullYear(date) <= this.utils.getFullYear(this.disabledDates.to) || this.utils.getFullYear(date) < this.utils.getFullYear(this.disabledDates.to)) {
+          disabledDates = true;
+        }
+      }
+
+      if (typeof this.disabledDates.from !== 'undefined' && this.disabledDates.from) {
+        if (this.utils.getMonth(date) > this.utils.getMonth(this.disabledDates.from) && this.utils.getFullYear(date) >= this.utils.getFullYear(this.disabledDates.from) || this.utils.getFullYear(date) > this.utils.getFullYear(this.disabledDates.from)) {
+          disabledDates = true;
+        }
+      }
+
+      if (typeof this.disabledDates.customPredictor === 'function' && this.disabledDates.customPredictor(date)) {
+        disabledDates = true;
+      }
+
+      return disabledDates;
+    }
+  } // eslint-disable-next-line
+
+};
+
+/* script */
+const __vue_script__$2 = script$2;
+
+/* template */
+var __vue_render__$2 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.showMonthView,
+          expression: "showMonthView"
+        }
+      ],
+      class: [_vm.calendarClass, "vdp-datepicker__calendar"],
+      style: _vm.calendarStyle,
+      on: {
+        mousedown: function($event) {
+          $event.preventDefault();
+        }
+      }
+    },
+    [
+      _vm._t("beforeCalendarHeader"),
+      _vm._v(" "),
+      _c("header", [
+        _c(
+          "span",
+          {
+            staticClass: "prev",
+            class: { disabled: _vm.isLeftNavDisabled },
+            on: {
+              click: function($event) {
+                _vm.isRtl ? _vm.nextYear() : _vm.previousYear();
+              }
+            }
+          },
+          [_vm._v("<")]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "month__year_btn",
+            class: _vm.allowedToShowView("year") ? "up" : "",
+            on: { click: _vm.showYearCalendar }
+          },
+          [_vm._v(_vm._s(_vm.pageYearName))]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "next",
+            class: { disabled: _vm.isRightNavDisabled },
+            on: {
+              click: function($event) {
+                _vm.isRtl ? _vm.previousYear() : _vm.nextYear();
+              }
+            }
+          },
+          [_vm._v(">")]
+        )
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.months, function(month) {
+        return _c(
+          "span",
+          {
+            key: month.timestamp,
+            staticClass: "cell month",
+            class: { selected: month.isSelected, disabled: month.isDisabled },
+            on: {
+              click: function($event) {
+                $event.stopPropagation();
+                return _vm.selectMonth(month)
+              }
+            }
+          },
+          [_vm._v(_vm._s(month.month))]
+        )
+      })
+    ],
+    2
+  )
+};
+var __vue_staticRenderFns__$2 = [];
+__vue_render__$2._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$2 = undefined;
+  /* scoped */
+  const __vue_scope_id__$2 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$2 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$2 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var PickerMonth = normalizeComponent_1(
+    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+    __vue_inject_styles__$2,
+    __vue_script__$2,
+    __vue_scope_id__$2,
+    __vue_is_functional_template__$2,
+    __vue_module_identifier__$2,
+    undefined,
+    undefined
+  );
+
+//
+var script$3 = {
+  props: {
+    showYearView: Boolean,
+    selectedDate: Date,
+    pageDate: Date,
+    pageTimestamp: Number,
+    disabledDates: Object,
+    highlighted: Object,
+    calendarClass: [String, Object, Array],
+    calendarStyle: Object,
+    translation: Object,
+    isRtl: Boolean,
+    allowedToShowView: Function,
+    useUtc: Boolean
+  },
+  computed: {
+    years: function years() {
+      var d = this.pageDate;
+      var years = []; // set up a new date object to the beginning of the current 'page'7
+
+      var dObj = this.useUtc ? new Date(Date.UTC(Math.floor(d.getUTCFullYear() / 10) * 10, d.getUTCMonth(), d.getUTCDate())) : new Date(Math.floor(d.getFullYear() / 10) * 10, d.getMonth(), d.getDate(), d.getHours(), d.getMinutes());
+
+      for (var i = 0; i < 10; i++) {
+        years.push({
+          year: this.utils.getFullYear(dObj),
+          timestamp: dObj.getTime(),
+          isSelected: this.isSelectedYear(dObj),
+          isDisabled: this.isDisabledYear(dObj)
+        });
+        this.utils.setFullYear(dObj, this.utils.getFullYear(dObj) + 1);
+      }
+
+      return years;
+    },
+
+    /**
+     * @return {String}
+     */
+    getPageDecade: function getPageDecade() {
+      var decadeStart = Math.floor(this.utils.getFullYear(this.pageDate) / 10) * 10;
+      var decadeEnd = decadeStart + 9;
+      var yearSuffix = this.translation.yearSuffix;
+      return "".concat(decadeStart, " - ").concat(decadeEnd).concat(yearSuffix);
+    },
+
+    /**
+     * Is the left hand navigation button disabled?
+     * @return {Boolean}
+     */
+    isLeftNavDisabled: function isLeftNavDisabled() {
+      return this.isRtl ? this.isNextDecadeDisabled(this.pageTimestamp) : this.isPreviousDecadeDisabled(this.pageTimestamp);
+    },
+
+    /**
+     * Is the right hand navigation button disabled?
+     * @return {Boolean}
+     */
+    isRightNavDisabled: function isRightNavDisabled() {
+      return this.isRtl ? this.isPreviousDecadeDisabled(this.pageTimestamp) : this.isNextDecadeDisabled(this.pageTimestamp);
+    }
+  },
+  data: function data() {
+    var constructedDateUtils = makeDateUtils(this.useUtc);
+    return {
+      utils: constructedDateUtils
+    };
+  },
+  methods: {
+    selectYear: function selectYear(year) {
+      if (year.isDisabled) {
+        return false;
+      }
+
+      this.$emit('selectYear', year);
+    },
+    changeYear: function changeYear(incrementBy) {
+      var date = this.pageDate;
+      this.utils.setFullYear(date, this.utils.getFullYear(date) + incrementBy);
+      this.$emit('changedDecade', date);
+    },
+    previousDecade: function previousDecade() {
+      if (this.isPreviousDecadeDisabled()) {
+        return false;
+      }
+
+      this.changeYear(-10);
+    },
+    isPreviousDecadeDisabled: function isPreviousDecadeDisabled() {
+      if (!this.disabledDates || !this.disabledDates.to) {
+        return false;
+      }
+
+      var disabledYear = this.utils.getFullYear(this.disabledDates.to);
+      var lastYearInPreviousPage = Math.floor(this.utils.getFullYear(this.pageDate) / 10) * 10 - 1;
+      return disabledYear > lastYearInPreviousPage;
+    },
+    nextDecade: function nextDecade() {
+      if (this.isNextDecadeDisabled()) {
+        return false;
+      }
+
+      this.changeYear(10);
+    },
+    isNextDecadeDisabled: function isNextDecadeDisabled() {
+      if (!this.disabledDates || !this.disabledDates.from) {
+        return false;
+      }
+
+      var disabledYear = this.utils.getFullYear(this.disabledDates.from);
+      var firstYearInNextPage = Math.ceil(this.utils.getFullYear(this.pageDate) / 10) * 10;
+      return disabledYear < firstYearInNextPage;
+    },
+
+    /**
+     * Whether the selected date is in this year
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isSelectedYear: function isSelectedYear(date) {
+      return this.selectedDate && this.utils.getFullYear(this.selectedDate) === this.utils.getFullYear(date);
+    },
+
+    /**
+     * Whether a year is disabled
+     * @param {Date}
+     * @return {Boolean}
+     */
+    isDisabledYear: function isDisabledYear(date) {
+      var disabledDates = false;
+
+      if (typeof this.disabledDates === 'undefined' || !this.disabledDates) {
+        return false;
+      }
+
+      if (typeof this.disabledDates.to !== 'undefined' && this.disabledDates.to) {
+        if (this.utils.getFullYear(date) < this.utils.getFullYear(this.disabledDates.to)) {
+          disabledDates = true;
+        }
+      }
+
+      if (typeof this.disabledDates.from !== 'undefined' && this.disabledDates.from) {
+        if (this.utils.getFullYear(date) > this.utils.getFullYear(this.disabledDates.from)) {
+          disabledDates = true;
+        }
+      }
+
+      if (typeof this.disabledDates.customPredictor === 'function' && this.disabledDates.customPredictor(date)) {
+        disabledDates = true;
+      }
+
+      return disabledDates;
+    }
+  } // eslint-disable-next-line
+
+};
+
+/* script */
+const __vue_script__$3 = script$3;
+
+/* template */
+var __vue_render__$3 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.showYearView,
+          expression: "showYearView"
+        }
+      ],
+      class: [_vm.calendarClass, "vdp-datepicker__calendar"],
+      style: _vm.calendarStyle,
+      on: {
+        mousedown: function($event) {
+          $event.preventDefault();
+        }
+      }
+    },
+    [
+      _vm._t("beforeCalendarHeader"),
+      _vm._v(" "),
+      _c("header", [
+        _c(
+          "span",
+          {
+            staticClass: "prev",
+            class: { disabled: _vm.isLeftNavDisabled },
+            on: {
+              click: function($event) {
+                _vm.isRtl ? _vm.nextDecade() : _vm.previousDecade();
+              }
+            }
+          },
+          [_vm._v("<")]
+        ),
+        _vm._v(" "),
+        _c("span", [_vm._v(_vm._s(_vm.getPageDecade))]),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "next",
+            class: { disabled: _vm.isRightNavDisabled },
+            on: {
+              click: function($event) {
+                _vm.isRtl ? _vm.previousDecade() : _vm.nextDecade();
+              }
+            }
+          },
+          [_vm._v(">")]
+        )
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.years, function(year) {
+        return _c(
+          "span",
+          {
+            key: year.timestamp,
+            staticClass: "cell year",
+            class: { selected: year.isSelected, disabled: year.isDisabled },
+            on: {
+              click: function($event) {
+                $event.stopPropagation();
+                return _vm.selectYear(year)
+              }
+            }
+          },
+          [_vm._v(_vm._s(year.year))]
+        )
+      })
+    ],
+    2
+  )
+};
+var __vue_staticRenderFns__$3 = [];
+__vue_render__$3._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$3 = undefined;
+  /* scoped */
+  const __vue_scope_id__$3 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$3 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$3 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var PickerYear = normalizeComponent_1(
+    { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
+    __vue_inject_styles__$3,
+    __vue_script__$3,
+    __vue_scope_id__$3,
+    __vue_is_functional_template__$3,
+    __vue_module_identifier__$3,
+    undefined,
+    undefined
+  );
+
+//
+var script$4 = {
+  components: {
+    DateInput: DateInput,
+    PickerDay: PickerDay,
+    PickerMonth: PickerMonth,
+    PickerYear: PickerYear
+  },
+  props: {
+    value: {
+      validator: function validator(val) {
+        return utils$1.validateDateInput(val);
+      }
+    },
+    name: String,
+    refName: String,
+    id: String,
+    format: {
+      type: [String, Function],
+      "default": 'dd MMM yyyy'
+    },
+    language: {
+      type: Object,
+      "default": function _default() {
+        return en;
+      }
+    },
+    openDate: {
+      validator: function validator(val) {
+        return utils$1.validateDateInput(val);
+      }
+    },
+    dayCellContent: Function,
+    fullMonthName: Boolean,
+    disabledDates: Object,
+    highlighted: Object,
+    placeholder: String,
+    inline: Boolean,
+    calendarClass: [String, Object, Array],
+    inputClass: [String, Object, Array],
+    wrapperClass: [String, Object, Array],
+    mondayFirst: Boolean,
+    clearButton: Boolean,
+    clearButtonIcon: String,
+    calendarButton: Boolean,
+    calendarButtonIcon: String,
+    calendarButtonIconContent: String,
+    bootstrapStyling: Boolean,
+    initialView: String,
+    disabled: Boolean,
+    required: Boolean,
+    typeable: Boolean,
+    useUtc: Boolean,
+    minimumView: {
+      type: String,
+      "default": 'day'
+    },
+    maximumView: {
+      type: String,
+      "default": 'year'
+    }
+  },
+  data: function data() {
+    var startDate = this.openDate ? new Date(this.openDate) : new Date();
+    var constructedDateUtils = makeDateUtils(this.useUtc);
+    var pageTimestamp = constructedDateUtils.setDate(startDate, 1);
+    return {
+      /*
+       * Vue cannot observe changes to a Date Object so date must be stored as a timestamp
+       * This represents the first day of the current viewing month
+       * {Number}
+       */
+      pageTimestamp: pageTimestamp,
+
+      /*
+       * Selected Date
+       * {Date}
+       */
+      selectedDate: null,
+
+      /*
+       * Flags to show calendar views
+       * {Boolean}
+       */
+      showDayView: false,
+      showMonthView: false,
+      showYearView: false,
+
+      /*
+       * Positioning
+       */
+      calendarHeight: 0,
+      resetTypedDate: new Date(),
+      utils: constructedDateUtils
+    };
+  },
+  watch: {
+    value: function value(_value) {
+      this.setValue(_value);
+    },
+    openDate: function openDate() {
+      this.setPageDate();
+    },
+    initialView: function initialView() {
+      this.setInitialView();
+    }
+  },
+  computed: {
+    computedInitialView: function computedInitialView() {
+      if (!this.initialView) {
+        return this.minimumView;
+      }
+
+      return this.initialView;
+    },
+    pageDate: function pageDate() {
+      return new Date(this.pageTimestamp);
+    },
+    translation: function translation() {
+      return this.language;
+    },
+    calendarStyle: function calendarStyle() {
+      return {
+        position: this.isInline ? 'static' : undefined
+      };
+    },
+    isOpen: function isOpen() {
+      return this.showDayView || this.showMonthView || this.showYearView;
+    },
+    isInline: function isInline() {
+      return !!this.inline;
+    },
+    isRtl: function isRtl() {
+      return this.translation.rtl === true;
+    }
+  },
+  methods: {
+    /**
+     * Called in the event that the user navigates to date pages and
+     * closes the picker without selecting a date.
+     */
+    resetDefaultPageDate: function resetDefaultPageDate() {
+      if (this.selectedDate === null) {
+        this.setPageDate();
+        return;
+      }
+
+      this.setPageDate(this.selectedDate);
+    },
+
+    /**
+     * Effectively a toggle to show/hide the calendar
+     * @return {mixed}
+     */
+    showCalendar: function showCalendar() {
+      if (this.disabled || this.isInline) {
+        return false;
+      }
+
+      if (this.isOpen) {
+        return this.close(true);
+      }
+
+      this.setInitialView();
+    },
+
+    /**
+     * Sets the initial picker page view: day, month or year
+     */
+    setInitialView: function setInitialView() {
+      var initialView = this.computedInitialView;
+
+      if (!this.allowedToShowView(initialView)) {
+        throw new Error("initialView '".concat(this.initialView, "' cannot be rendered based on minimum '").concat(this.minimumView, "' and maximum '").concat(this.maximumView, "'"));
+      }
+
+      switch (initialView) {
+        case 'year':
+          this.showYearCalendar();
+          break;
+
+        case 'month':
+          this.showMonthCalendar();
+          break;
+
+        default:
+          this.showDayCalendar();
+          break;
+      }
+    },
+
+    /**
+     * Are we allowed to show a specific picker view?
+     * @param {String} view
+     * @return {Boolean}
+     */
+    allowedToShowView: function allowedToShowView(view) {
+      var views = ['day', 'month', 'year'];
+      var minimumViewIndex = views.indexOf(this.minimumView);
+      var maximumViewIndex = views.indexOf(this.maximumView);
+      var viewIndex = views.indexOf(view);
+      return viewIndex >= minimumViewIndex && viewIndex <= maximumViewIndex;
+    },
+
+    /**
+     * Show the day picker
+     * @return {Boolean}
+     */
+    showDayCalendar: function showDayCalendar() {
+      if (!this.allowedToShowView('day')) {
+        return false;
+      }
+
+      this.close();
+      this.showDayView = true;
+      return true;
+    },
+
+    /**
+     * Show the month picker
+     * @return {Boolean}
+     */
+    showMonthCalendar: function showMonthCalendar() {
+      if (!this.allowedToShowView('month')) {
+        return false;
+      }
+
+      this.close();
+      this.showMonthView = true;
+      return true;
+    },
+
+    /**
+     * Show the year picker
+     * @return {Boolean}
+     */
+    showYearCalendar: function showYearCalendar() {
+      if (!this.allowedToShowView('year')) {
+        return false;
+      }
+
+      this.close();
+      this.showYearView = true;
+      return true;
+    },
+
+    /**
+     * Set the selected date
+     * @param {Number} timestamp
+     */
+    setDate: function setDate(timestamp) {
+      var date = new Date(timestamp);
+      this.selectedDate = date;
+      this.setPageDate(date);
+      this.$emit('selected', date);
+      this.$emit('input', date);
+    },
+
+    /**
+     * Clear the selected date
+     */
+    clearDate: function clearDate() {
+      this.selectedDate = null;
+      this.setPageDate();
+      this.$emit('selected', null);
+      this.$emit('input', null);
+      this.$emit('cleared');
+    },
+
+    /**
+     * @param {Object} date
+     */
+    selectDate: function selectDate(date) {
+      this.setDate(date.timestamp);
+
+      if (!this.isInline) {
+        this.close(true);
+      }
+
+      this.resetTypedDate = new Date();
+    },
+
+    /**
+     * @param {Object} date
+     */
+    selectDisabledDate: function selectDisabledDate(date) {
+      this.$emit('selectedDisabled', date);
+    },
+
+    /**
+     * @param {Object} month
+     */
+    selectMonth: function selectMonth(month) {
+      var date = new Date(month.timestamp);
+
+      if (this.allowedToShowView('day')) {
+        this.setPageDate(date);
+        this.$emit('changedMonth', month);
+        this.showDayCalendar();
+      } else {
+        this.selectDate(month);
+      }
+    },
+
+    /**
+     * @param {Object} year
+     */
+    selectYear: function selectYear(year) {
+      var date = new Date(year.timestamp);
+
+      if (this.allowedToShowView('month')) {
+        this.setPageDate(date);
+        this.$emit('changedYear', year);
+        this.showMonthCalendar();
+      } else {
+        this.selectDate(year);
+      }
+    },
+
+    /**
+     * Set the datepicker value
+     * @param {Date|String|Number|null} date
+     */
+    setValue: function setValue(date) {
+      if (typeof date === 'string' || typeof date === 'number') {
+        var parsed = new Date(date);
+        date = isNaN(parsed.valueOf()) ? null : parsed;
+      }
+
+      if (!date) {
+        this.setPageDate();
+        this.selectedDate = null;
+        return;
+      }
+
+      this.selectedDate = date;
+      this.setPageDate(date);
+    },
+
+    /**
+     * Sets the date that the calendar should open on
+     */
+    setPageDate: function setPageDate(date) {
+      if (!date) {
+        if (this.openDate) {
+          date = new Date(this.openDate);
+        } else {
+          date = new Date();
+        }
+      }
+
+      this.pageTimestamp = this.utils.setDate(new Date(date), 1);
+    },
+
+    /**
+     * Handles a month change from the day picker
+     */
+    handleChangedMonthFromDayPicker: function handleChangedMonthFromDayPicker(date) {
+      this.setPageDate(date);
+      this.$emit('changedMonth', date);
+    },
+
+    /**
+     * Set the date from a typedDate event
+     */
+    setTypedDate: function setTypedDate(date) {
+      this.setDate(date.getTime());
+    },
+
+    /**
+     * Close all calendar layers
+     * @param {Boolean} emitEvent - emit close event
+     */
+    close: function close(emitEvent) {
+      this.showDayView = this.showMonthView = this.showYearView = false;
+
+      if (!this.isInline) {
+        if (emitEvent) {
+          this.$emit('closed');
+        }
+
+        document.removeEventListener('click', this.clickOutside, false);
+      }
+    },
+
+    /**
+     * Initiate the component
+     */
+    init: function init() {
+      if (this.value) {
+        this.setValue(this.value);
+      }
+
+      if (this.isInline) {
+        this.setInitialView();
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.init();
+  }
+} // eslint-disable-next-line
+;
+
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
+function createInjector(context) {
+  return function (id, style) {
+    return addStyle(id, style);
+  };
+}
+var HEAD = document.head || document.getElementsByTagName('head')[0];
+var styles = {};
+
+function addStyle(id, css) {
+  var group = isOldIE ? css.media || 'default' : id;
+  var style = styles[group] || (styles[group] = {
+    ids: new Set(),
+    styles: []
+  });
+
+  if (!style.ids.has(id)) {
+    style.ids.add(id);
+    var code = css.source;
+
+    if (css.map) {
+      // https://developer.chrome.com/devtools/docs/javascript-debugging
+      // this makes source maps inside style tags work properly in Chrome
+      code += '\n/*# sourceURL=' + css.map.sources[0] + ' */'; // http://stackoverflow.com/a/26603875
+
+      code += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) + ' */';
+    }
+
+    if (!style.element) {
+      style.element = document.createElement('style');
+      style.element.type = 'text/css';
+      if (css.media) style.element.setAttribute('media', css.media);
+      HEAD.appendChild(style.element);
+    }
+
+    if ('styleSheet' in style.element) {
+      style.styles.push(code);
+      style.element.styleSheet.cssText = style.styles.filter(Boolean).join('\n');
+    } else {
+      var index = style.ids.size - 1;
+      var textNode = document.createTextNode(code);
+      var nodes = style.element.childNodes;
+      if (nodes[index]) style.element.removeChild(nodes[index]);
+      if (nodes.length) style.element.insertBefore(textNode, nodes[index]);else style.element.appendChild(textNode);
+    }
+  }
+}
+
+var browser = createInjector;
+
+/* script */
+const __vue_script__$4 = script$4;
+
+/* template */
+var __vue_render__$4 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    {
+      staticClass: "vdp-datepicker",
+      class: [_vm.wrapperClass, _vm.isRtl ? "rtl" : ""]
+    },
+    [
+      _c(
+        "date-input",
+        {
+          attrs: {
+            selectedDate: _vm.selectedDate,
+            resetTypedDate: _vm.resetTypedDate,
+            format: _vm.format,
+            translation: _vm.translation,
+            inline: _vm.inline,
+            id: _vm.id,
+            name: _vm.name,
+            refName: _vm.refName,
+            openDate: _vm.openDate,
+            placeholder: _vm.placeholder,
+            inputClass: _vm.inputClass,
+            typeable: _vm.typeable,
+            clearButton: _vm.clearButton,
+            clearButtonIcon: _vm.clearButtonIcon,
+            calendarButton: _vm.calendarButton,
+            calendarButtonIcon: _vm.calendarButtonIcon,
+            calendarButtonIconContent: _vm.calendarButtonIconContent,
+            disabled: _vm.disabled,
+            required: _vm.required,
+            bootstrapStyling: _vm.bootstrapStyling,
+            "use-utc": _vm.useUtc
+          },
+          on: {
+            showCalendar: _vm.showCalendar,
+            closeCalendar: _vm.close,
+            typedDate: _vm.setTypedDate,
+            clearDate: _vm.clearDate
+          }
+        },
+        [_vm._t("afterDateInput", null, { slot: "afterDateInput" })],
+        2
+      ),
+      _vm._v(" "),
+      _vm.allowedToShowView("day")
+        ? _c(
+            "picker-day",
+            {
+              attrs: {
+                pageDate: _vm.pageDate,
+                selectedDate: _vm.selectedDate,
+                showDayView: _vm.showDayView,
+                fullMonthName: _vm.fullMonthName,
+                allowedToShowView: _vm.allowedToShowView,
+                disabledDates: _vm.disabledDates,
+                highlighted: _vm.highlighted,
+                calendarClass: _vm.calendarClass,
+                calendarStyle: _vm.calendarStyle,
+                translation: _vm.translation,
+                pageTimestamp: _vm.pageTimestamp,
+                isRtl: _vm.isRtl,
+                mondayFirst: _vm.mondayFirst,
+                dayCellContent: _vm.dayCellContent,
+                "use-utc": _vm.useUtc
+              },
+              on: {
+                changedMonth: _vm.handleChangedMonthFromDayPicker,
+                selectDate: _vm.selectDate,
+                showMonthCalendar: _vm.showMonthCalendar,
+                selectedDisabled: _vm.selectDisabledDate
+              }
+            },
+            [
+              _vm._t("beforeCalendarHeader", null, {
+                slot: "beforeCalendarHeader"
+              })
+            ],
+            2
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.allowedToShowView("month")
+        ? _c(
+            "picker-month",
+            {
+              attrs: {
+                pageDate: _vm.pageDate,
+                selectedDate: _vm.selectedDate,
+                showMonthView: _vm.showMonthView,
+                allowedToShowView: _vm.allowedToShowView,
+                disabledDates: _vm.disabledDates,
+                calendarClass: _vm.calendarClass,
+                calendarStyle: _vm.calendarStyle,
+                translation: _vm.translation,
+                isRtl: _vm.isRtl,
+                "use-utc": _vm.useUtc
+              },
+              on: {
+                selectMonth: _vm.selectMonth,
+                showYearCalendar: _vm.showYearCalendar,
+                changedYear: _vm.setPageDate
+              }
+            },
+            [
+              _vm._t("beforeCalendarHeader", null, {
+                slot: "beforeCalendarHeader"
+              })
+            ],
+            2
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.allowedToShowView("year")
+        ? _c(
+            "picker-year",
+            {
+              attrs: {
+                pageDate: _vm.pageDate,
+                selectedDate: _vm.selectedDate,
+                showYearView: _vm.showYearView,
+                allowedToShowView: _vm.allowedToShowView,
+                disabledDates: _vm.disabledDates,
+                calendarClass: _vm.calendarClass,
+                calendarStyle: _vm.calendarStyle,
+                translation: _vm.translation,
+                isRtl: _vm.isRtl,
+                "use-utc": _vm.useUtc
+              },
+              on: { selectYear: _vm.selectYear, changedDecade: _vm.setPageDate }
+            },
+            [
+              _vm._t("beforeCalendarHeader", null, {
+                slot: "beforeCalendarHeader"
+              })
+            ],
+            2
+          )
+        : _vm._e()
+    ],
+    1
+  )
+};
+var __vue_staticRenderFns__$4 = [];
+__vue_render__$4._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$4 = function (inject) {
+    if (!inject) return
+    inject("data-v-64ca2bb5_0", { source: ".rtl {\n  direction: rtl;\n}\n.vdp-datepicker {\n  position: relative;\n  text-align: left;\n}\n.vdp-datepicker * {\n  box-sizing: border-box;\n}\n.vdp-datepicker__calendar {\n  position: absolute;\n  z-index: 100;\n  background: #fff;\n  width: 300px;\n  border: 1px solid #ccc;\n}\n.vdp-datepicker__calendar header {\n  display: block;\n  line-height: 40px;\n}\n.vdp-datepicker__calendar header span {\n  display: inline-block;\n  text-align: center;\n  width: 71.42857142857143%;\n  float: left;\n}\n.vdp-datepicker__calendar header .prev,\n.vdp-datepicker__calendar header .next {\n  width: 14.285714285714286%;\n  float: left;\n  text-indent: -10000px;\n  position: relative;\n}\n.vdp-datepicker__calendar header .prev:after,\n.vdp-datepicker__calendar header .next:after {\n  content: '';\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translateX(-50%) translateY(-50%);\n  border: 6px solid transparent;\n}\n.vdp-datepicker__calendar header .prev:after {\n  border-right: 10px solid #000;\n  margin-left: -5px;\n}\n.vdp-datepicker__calendar header .prev.disabled:after {\n  border-right: 10px solid #ddd;\n}\n.vdp-datepicker__calendar header .next:after {\n  border-left: 10px solid #000;\n  margin-left: 5px;\n}\n.vdp-datepicker__calendar header .next.disabled:after {\n  border-left: 10px solid #ddd;\n}\n.vdp-datepicker__calendar header .prev:not(.disabled),\n.vdp-datepicker__calendar header .next:not(.disabled),\n.vdp-datepicker__calendar header .up:not(.disabled) {\n  cursor: pointer;\n}\n.vdp-datepicker__calendar header .prev:not(.disabled):hover,\n.vdp-datepicker__calendar header .next:not(.disabled):hover,\n.vdp-datepicker__calendar header .up:not(.disabled):hover {\n  background: #eee;\n}\n.vdp-datepicker__calendar .disabled {\n  color: #ddd;\n  cursor: default;\n}\n.vdp-datepicker__calendar .flex-rtl {\n  display: flex;\n  width: inherit;\n  flex-wrap: wrap;\n}\n.vdp-datepicker__calendar .cell {\n  display: inline-block;\n  padding: 0 5px;\n  width: 14.285714285714286%;\n  height: 40px;\n  line-height: 40px;\n  text-align: center;\n  vertical-align: middle;\n  border: 1px solid transparent;\n}\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year {\n  cursor: pointer;\n}\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {\n  border: 1px solid #4bd;\n}\n.vdp-datepicker__calendar .cell.selected {\n  background: #4bd;\n}\n.vdp-datepicker__calendar .cell.selected:hover {\n  background: #4bd;\n}\n.vdp-datepicker__calendar .cell.selected.highlighted {\n  background: #4bd;\n}\n.vdp-datepicker__calendar .cell.highlighted {\n  background: #cae5ed;\n}\n.vdp-datepicker__calendar .cell.highlighted.disabled {\n  color: #a3a3a3;\n}\n.vdp-datepicker__calendar .cell.grey {\n  color: #888;\n}\n.vdp-datepicker__calendar .cell.grey:hover {\n  background: inherit;\n}\n.vdp-datepicker__calendar .cell.day-header {\n  font-size: 75%;\n  white-space: nowrap;\n  cursor: inherit;\n}\n.vdp-datepicker__calendar .cell.day-header:hover {\n  background: inherit;\n}\n.vdp-datepicker__calendar .month,\n.vdp-datepicker__calendar .year {\n  width: 33.333%;\n}\n.vdp-datepicker__clear-button,\n.vdp-datepicker__calendar-button {\n  cursor: pointer;\n  font-style: normal;\n}\n.vdp-datepicker__clear-button.disabled,\n.vdp-datepicker__calendar-button.disabled {\n  color: #999;\n  cursor: default;\n}\n", map: {"version":3,"sources":["Datepicker.vue"],"names":[],"mappings":"AAAA;EACE,cAAc;AAChB;AACA;EACE,kBAAkB;EAClB,gBAAgB;AAClB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,kBAAkB;EAClB,YAAY;EACZ,gBAAgB;EAChB,YAAY;EACZ,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,iBAAiB;AACnB;AACA;EACE,qBAAqB;EACrB,kBAAkB;EAClB,yBAAyB;EACzB,WAAW;AACb;AACA;;EAEE,0BAA0B;EAC1B,WAAW;EACX,qBAAqB;EACrB,kBAAkB;AACpB;AACA;;EAEE,WAAW;EACX,kBAAkB;EAClB,SAAS;EACT,QAAQ;EACR,4CAA4C;EAC5C,6BAA6B;AAC/B;AACA;EACE,6BAA6B;EAC7B,iBAAiB;AACnB;AACA;EACE,6BAA6B;AAC/B;AACA;EACE,4BAA4B;EAC5B,gBAAgB;AAClB;AACA;EACE,4BAA4B;AAC9B;AACA;;;EAGE,eAAe;AACjB;AACA;;;EAGE,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,eAAe;AACjB;AACA;EACE,aAAa;EACb,cAAc;EACd,eAAe;AACjB;AACA;EACE,qBAAqB;EACrB,cAAc;EACd,0BAA0B;EAC1B,YAAY;EACZ,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,6BAA6B;AAC/B;AACA;;;EAGE,eAAe;AACjB;AACA;;;EAGE,sBAAsB;AACxB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,cAAc;AAChB;AACA;EACE,WAAW;AACb;AACA;EACE,mBAAmB;AACrB;AACA;EACE,cAAc;EACd,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,mBAAmB;AACrB;AACA;;EAEE,cAAc;AAChB;AACA;;EAEE,eAAe;EACf,kBAAkB;AACpB;AACA;;EAEE,WAAW;EACX,eAAe;AACjB","file":"Datepicker.vue","sourcesContent":[".rtl {\n  direction: rtl;\n}\n.vdp-datepicker {\n  position: relative;\n  text-align: left;\n}\n.vdp-datepicker * {\n  box-sizing: border-box;\n}\n.vdp-datepicker__calendar {\n  position: absolute;\n  z-index: 100;\n  background: #fff;\n  width: 300px;\n  border: 1px solid #ccc;\n}\n.vdp-datepicker__calendar header {\n  display: block;\n  line-height: 40px;\n}\n.vdp-datepicker__calendar header span {\n  display: inline-block;\n  text-align: center;\n  width: 71.42857142857143%;\n  float: left;\n}\n.vdp-datepicker__calendar header .prev,\n.vdp-datepicker__calendar header .next {\n  width: 14.285714285714286%;\n  float: left;\n  text-indent: -10000px;\n  position: relative;\n}\n.vdp-datepicker__calendar header .prev:after,\n.vdp-datepicker__calendar header .next:after {\n  content: '';\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translateX(-50%) translateY(-50%);\n  border: 6px solid transparent;\n}\n.vdp-datepicker__calendar header .prev:after {\n  border-right: 10px solid #000;\n  margin-left: -5px;\n}\n.vdp-datepicker__calendar header .prev.disabled:after {\n  border-right: 10px solid #ddd;\n}\n.vdp-datepicker__calendar header .next:after {\n  border-left: 10px solid #000;\n  margin-left: 5px;\n}\n.vdp-datepicker__calendar header .next.disabled:after {\n  border-left: 10px solid #ddd;\n}\n.vdp-datepicker__calendar header .prev:not(.disabled),\n.vdp-datepicker__calendar header .next:not(.disabled),\n.vdp-datepicker__calendar header .up:not(.disabled) {\n  cursor: pointer;\n}\n.vdp-datepicker__calendar header .prev:not(.disabled):hover,\n.vdp-datepicker__calendar header .next:not(.disabled):hover,\n.vdp-datepicker__calendar header .up:not(.disabled):hover {\n  background: #eee;\n}\n.vdp-datepicker__calendar .disabled {\n  color: #ddd;\n  cursor: default;\n}\n.vdp-datepicker__calendar .flex-rtl {\n  display: flex;\n  width: inherit;\n  flex-wrap: wrap;\n}\n.vdp-datepicker__calendar .cell {\n  display: inline-block;\n  padding: 0 5px;\n  width: 14.285714285714286%;\n  height: 40px;\n  line-height: 40px;\n  text-align: center;\n  vertical-align: middle;\n  border: 1px solid transparent;\n}\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year {\n  cursor: pointer;\n}\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,\n.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {\n  border: 1px solid #4bd;\n}\n.vdp-datepicker__calendar .cell.selected {\n  background: #4bd;\n}\n.vdp-datepicker__calendar .cell.selected:hover {\n  background: #4bd;\n}\n.vdp-datepicker__calendar .cell.selected.highlighted {\n  background: #4bd;\n}\n.vdp-datepicker__calendar .cell.highlighted {\n  background: #cae5ed;\n}\n.vdp-datepicker__calendar .cell.highlighted.disabled {\n  color: #a3a3a3;\n}\n.vdp-datepicker__calendar .cell.grey {\n  color: #888;\n}\n.vdp-datepicker__calendar .cell.grey:hover {\n  background: inherit;\n}\n.vdp-datepicker__calendar .cell.day-header {\n  font-size: 75%;\n  white-space: nowrap;\n  cursor: inherit;\n}\n.vdp-datepicker__calendar .cell.day-header:hover {\n  background: inherit;\n}\n.vdp-datepicker__calendar .month,\n.vdp-datepicker__calendar .year {\n  width: 33.333%;\n}\n.vdp-datepicker__clear-button,\n.vdp-datepicker__calendar-button {\n  cursor: pointer;\n  font-style: normal;\n}\n.vdp-datepicker__clear-button.disabled,\n.vdp-datepicker__calendar-button.disabled {\n  color: #999;\n  cursor: default;\n}\n"]}, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$4 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$4 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$4 = false;
+  /* style inject SSR */
+  
+
+  
+  var Datepicker = normalizeComponent_1(
+    { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
+    __vue_inject_styles__$4,
+    __vue_script__$4,
+    __vue_scope_id__$4,
+    __vue_is_functional_template__$4,
+    __vue_module_identifier__$4,
+    browser,
+    undefined
+  );
+
+/* harmony default export */ __webpack_exports__["default"] = (Datepicker);
+
+
+/***/ }),
+
 /***/ "./node_modules/vuex/dist/vuex.esm.js":
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
@@ -54160,17 +56780,15 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
-/* harmony import */ var _components_SearchTask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/SearchTask */ "./resources/js/components/SearchTask.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
+/* harmony import */ var _components_SearchTask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SearchTask */ "./resources/js/components/SearchTask.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 
 
  //Components
@@ -54198,10 +56816,10 @@ Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var app = new Vue({
   el: '#app',
   components: {
-    SearchTask: _components_SearchTask__WEBPACK_IMPORTED_MODULE_3__["default"]
+    SearchTask: _components_SearchTask__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
-  router: _router__WEBPACK_IMPORTED_MODULE_2__["default"],
-  store: _store__WEBPACK_IMPORTED_MODULE_4__["default"]
+  router: _router__WEBPACK_IMPORTED_MODULE_1__["default"],
+  store: _store__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),
@@ -54261,6 +56879,75 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/GroupComponent.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/GroupComponent.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GroupComponent_vue_vue_type_template_id_6edbc169_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true& */ "./resources/js/components/GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true&");
+/* harmony import */ var _GroupComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GroupComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/GroupComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GroupComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GroupComponent_vue_vue_type_template_id_6edbc169_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GroupComponent_vue_vue_type_template_id_6edbc169_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6edbc169",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GroupComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GroupComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/GroupComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GroupComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./GroupComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GroupComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GroupComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GroupComponent_vue_vue_type_template_id_6edbc169_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GroupComponent.vue?vue&type=template&id=6edbc169&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GroupComponent_vue_vue_type_template_id_6edbc169_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GroupComponent_vue_vue_type_template_id_6edbc169_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -54328,6 +57015,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchTask_vue_vue_type_template_id_188f8d10___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchTask_vue_vue_type_template_id_188f8d10___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TaskComponent.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/TaskComponent.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TaskComponent_vue_vue_type_template_id_50814c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true& */ "./resources/js/components/TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true&");
+/* harmony import */ var _TaskComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TaskComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/TaskComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TaskComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TaskComponent_vue_vue_type_template_id_50814c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TaskComponent_vue_vue_type_template_id_50814c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "50814c9d",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/TaskComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/TaskComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/TaskComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TaskComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TaskComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskComponent_vue_vue_type_template_id_50814c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TaskComponent.vue?vue&type=template&id=50814c9d&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskComponent_vue_vue_type_template_id_50814c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskComponent_vue_vue_type_template_id_50814c9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -54413,6 +57169,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_TasksComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/TasksComponent */ "./resources/js/components/TasksComponent.vue");
+/* harmony import */ var _components_GroupComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/GroupComponent */ "./resources/js/components/GroupComponent.vue");
+
 
 
 var routes = [{
@@ -54422,6 +57180,15 @@ var routes = [{
   props: function props(route) {
     return {
       type: 'all'
+    };
+  }
+}, {
+  name: "tasks-past-due",
+  path: '/tasks/past-due',
+  component: _components_TasksComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
+  props: function props(route) {
+    return {
+      type: 'past-due'
     };
   }
 }, {
@@ -54451,6 +57218,10 @@ var routes = [{
       type: 'last-7-days'
     };
   }
+}, {
+  name: "groups",
+  path: '/groups/:group',
+  component: _components_GroupComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: routes,

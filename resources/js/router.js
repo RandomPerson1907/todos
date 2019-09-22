@@ -1,5 +1,6 @@
 import VueRouter from "vue-router";
 import TasksComponent from "./components/TasksComponent";
+import GroupComponent from "./components/GroupComponent";
 
 const routes = [
     {
@@ -7,6 +8,12 @@ const routes = [
         path: '/tasks/all',
         component: TasksComponent,
         props: (route) => ({ type:  'all' })
+    },
+    {
+        name: "tasks-past-due",
+        path: '/tasks/past-due',
+        component: TasksComponent,
+        props: (route) => ({ type:  'past-due' })
     },
     {
         name: "tasks-today",
@@ -25,6 +32,11 @@ const routes = [
         path: '/tasks/last-7-days',
         component: TasksComponent,
         props: (route) => ({ type:  'last-7-days' })
+    },
+    {
+        name: "groups",
+        path: '/groups/:group',
+        component: GroupComponent
     }
 ];
 
