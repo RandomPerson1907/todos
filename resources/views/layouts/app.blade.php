@@ -57,25 +57,25 @@
                             <li class="nav-item active">
                                 <router-link
                                     class="nav-link"
-                                    :to="{ name: 'tasks-all', params: { type: 'all' }}"
+                                    :to="{ name: 'tasks-all'}"
                                 >Все</router-link>
                             </li>
                             <li class="nav-item">
                                 <router-link
                                     class="nav-link"
-                                    :to="{ name: 'tasks-today', params: { type: 'today' }}"
+                                    :to="{ name: 'tasks-today'}"
                                 >Сегодня</router-link>
                             </li>
                             <li class="nav-item">
                                 <router-link
                                     class="nav-link"
-                                    :to="{ name: 'tasks-yesterday', params: { type: 'yesterday' }}"
+                                    :to="{ name: 'tasks-yesterday'}"
                                 >Вчера</router-link>
                             </li>
                             <li class="nav-item">
                                 <router-link
                                     class="nav-link"
-                                    :to="{ name: 'tasks-last-7-days', params: { type: 'last-7-days' }}"
+                                    :to="{ name: 'tasks-last-7-days'}"
                                 >Последние 7 дней</router-link>
                             </li>
                         </ul>

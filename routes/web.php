@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('{url}', function () {
     return view('main');
-})->where("url", ".*");
+})->where("url", '^(?!api).*$');

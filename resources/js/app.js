@@ -15,7 +15,6 @@ import SearchTask from "./components/SearchTask";
 
 window.Vue = require('vue');
 Vue.use(VueRouter);
-Vue.use(Vuex);
 
 /**
  * The following block of code may be used to automatically register your
@@ -34,8 +33,11 @@ Vue.use(Vuex);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import store from "./store";
+
 const app = new Vue({
     el: '#app',
     components: {SearchTask},
-    router
+    router,
+    store
 });

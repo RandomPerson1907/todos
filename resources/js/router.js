@@ -5,22 +5,26 @@ const routes = [
     {
         name: "tasks-all",
         path: '/tasks/all',
-        component: TasksComponent
+        component: TasksComponent,
+        props: (route) => ({ type:  'all' })
     },
     {
         name: "tasks-today",
         path: '/tasks/today',
-        component: TasksComponent
+        component: TasksComponent,
+        props: (route) => ({ type:  'today' })
     },
     {
         name: "tasks-yesterday",
         path: '/tasks/yesterday',
-        component: TasksComponent
+        component: TasksComponent,
+        props: (route) => ({ type:  'yesterday' })
     },
     {
         name: "tasks-last-7-days",
         path: '/tasks/last-7-days',
-        component: TasksComponent
+        component: TasksComponent,
+        props: (route) => ({ type:  'last-7-days' })
     }
 ];
 
