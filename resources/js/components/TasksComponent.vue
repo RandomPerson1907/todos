@@ -26,7 +26,8 @@
             return {
                 title: "",
                 body: "",
-                limit: 15,
+                limitTasks: 15,
+                limitGroups: false,
                 datetimeStart : null,
                 datetimeEnd : null,
                 settings: {
@@ -41,7 +42,12 @@
         async mounted() {
             this.fetchTasks({
                 route : this.$route.path,
-                limit : this.limit
+                limit : this.limitTasks
+            });
+
+            this.fetchGroups({
+                route : this.$router.resolve({name: 'groups'}).href,
+                limit : this.limitGroups
             });
         },
         watch: {
@@ -54,8 +60,8 @@
         },
         methods: {
             ...mapMutations(["createTask"]),
-            ...mapGetters(["getTasks"]),
-            ...mapActions(["fetchTasks"]),
+            ...mapGetters(["getTasks", "getGroups"]),
+            ...mapActions(["fetchTasks", "fetchGroups"]),
             submit() {
                 this.createTask({
                     title: this.title,

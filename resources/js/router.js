@@ -50,8 +50,15 @@ const routes = [
     },
     {
         name: "groups",
-        path: '/groups/:group',
-        component: GroupComponent
+        path: '/groups',
+        component: GroupComponent,
+        children: [
+            {
+                name: "group",
+                path: ":group",
+                component: GroupComponent,
+            }
+        ]
     },
     {
         name: "priority",

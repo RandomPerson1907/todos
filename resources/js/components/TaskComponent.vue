@@ -148,7 +148,8 @@
 <script>
     import Datepicker from 'vuejs-datepicker';
     import { Datetime } from 'vue-datetime';
-    import 'vue-datetime/dist/vue-datetime.css'
+    import 'vue-datetime/dist/vue-datetime.css';
+    import {mapMutations, mapGetters, mapActions} from 'vuex';
 
     export default {
         name: "TaskComponent",
@@ -213,7 +214,11 @@
                 return this.$router.resolve({name: 'task', params: {id : this.task.id}}).href;
             }
         },
+        async mounted() {
+          console.log(this.getGroups());
+        },
         methods: {
+            ...mapGetters(["getGroups"]),
             copySuccess() {
                 this.popovers.copyLink.text = this.popovers.copyLink.phrases.ok;
                 this.showPopover("copyLink");

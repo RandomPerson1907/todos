@@ -30,6 +30,20 @@ Route::get('tasks/{type}', function ($type) {
     return response()->json($tasks);
 });
 
+Route::get('groups/{slug?}', function ($slug = false) {
+    $faker = Faker\Factory::create();
+
+    $groups = [];
+    for($i = 0; $i < 8; $i++) {
+        $groups[] = [
+            "id" => $faker->randomNumber(),
+            "title" => $faker->sentence()
+        ];
+    }
+
+    return response()->json($groups);
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

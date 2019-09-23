@@ -2074,11 +2074,26 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-/* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-datetime */ "./node_modules/vue-datetime/dist/vue-datetime.js");
-/* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_datetime__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vue_datetime_dist_vue_datetime_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-datetime/dist/vue-datetime.css */ "./node_modules/vue-datetime/dist/vue-datetime.css");
-/* harmony import */ var vue_datetime_dist_vue_datetime_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_datetime_dist_vue_datetime_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+/* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-datetime */ "./node_modules/vue-datetime/dist/vue-datetime.js");
+/* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_datetime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_datetime_dist_vue_datetime_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-datetime/dist/vue-datetime.css */ "./node_modules/vue-datetime/dist/vue-datetime.css");
+/* harmony import */ var vue_datetime_dist_vue_datetime_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_datetime_dist_vue_datetime_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2226,6 +2241,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -2233,8 +2249,8 @@ __webpack_require__.r(__webpack_exports__);
   name: "TaskComponent",
   props: ["task"],
   components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"],
-    datetime: vue_datetime__WEBPACK_IMPORTED_MODULE_1__["Datetime"]
+    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"],
+    datetime: vue_datetime__WEBPACK_IMPORTED_MODULE_2__["Datetime"]
   },
   data: function data() {
     return {
@@ -2292,7 +2308,31 @@ __webpack_require__.r(__webpack_exports__);
       }).href;
     }
   },
-  methods: {
+  mounted: function () {
+    var _mounted = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              console.log(this.getGroups());
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    function mounted() {
+      return _mounted.apply(this, arguments);
+    }
+
+    return mounted;
+  }(),
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(["getGroups"]), {
     copySuccess: function copySuccess() {
       this.popovers.copyLink.text = this.popovers.copyLink.phrases.ok;
       this.showPopover("copyLink");
@@ -2339,7 +2379,7 @@ __webpack_require__.r(__webpack_exports__);
     save: function save() {
       console.log("save");
     }
-  }
+  })
 });
 
 /***/ }),
@@ -2416,7 +2456,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       title: "",
       body: "",
-      limit: 15,
+      limitTasks: 15,
+      limitGroups: false,
       datetimeStart: null,
       datetimeEnd: null,
       settings: {
@@ -2438,10 +2479,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 0:
               this.fetchTasks({
                 route: this.$route.path,
-                limit: this.limit
+                limit: this.limitTasks
+              });
+              this.fetchGroups({
+                route: this.$router.resolve({
+                  name: 'groups'
+                }).href,
+                limit: this.limitGroups
               });
 
-            case 1:
+            case 2:
             case "end":
               return _context.stop();
           }
@@ -2463,7 +2510,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     }
   },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapMutations"])(["createTask"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapGetters"])(["getTasks"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapActions"])(["fetchTasks"]), {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapMutations"])(["createTask"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapGetters"])(["getTasks", "getGroups"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapActions"])(["fetchTasks", "fetchGroups"]), {
     submit: function submit() {
       this.createTask({
         title: this.title,
@@ -97514,8 +97561,13 @@ var routes = [{
   component: _components_TaskDetailComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
   name: "groups",
-  path: '/groups/:group',
-  component: _components_GroupComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
+  path: '/groups',
+  component: _components_GroupComponent__WEBPACK_IMPORTED_MODULE_3__["default"],
+  children: [{
+    name: "group",
+    path: ":group",
+    component: _components_GroupComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }]
 }, {
   name: "priority",
   path: '/priority/:priority',
@@ -97545,16 +97597,90 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _modules_task__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/task */ "./resources/js/store/modules/task.js");
+/* harmony import */ var _modules_group__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/group */ "./resources/js/store/modules/group.js");
+
 
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: {
-    task: _modules_task__WEBPACK_IMPORTED_MODULE_2__["default"]
+    task: _modules_task__WEBPACK_IMPORTED_MODULE_2__["default"],
+    group: _modules_group__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
 /* harmony default export */ __webpack_exports__["default"] = (store);
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/group.js":
+/*!*********************************************!*\
+  !*** ./resources/js/store/modules/group.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  actions: {
+    fetchGroups: function () {
+      var _fetchGroups = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref, _ref2) {
+        var commit, getters, dispatch, route, _ref2$limit, limit, url;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                commit = _ref.commit, getters = _ref.getters, dispatch = _ref.dispatch;
+                route = _ref2.route, _ref2$limit = _ref2.limit, limit = _ref2$limit === void 0 ? 15 : _ref2$limit;
+                url = "/api".concat(route);
+                axios.get(url).then(function (response) {
+                  commit("setGroups", response.data);
+                })["catch"](function (error) {
+                  console.log(url);
+                  console.log(error);
+                });
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function fetchGroups(_x, _x2) {
+        return _fetchGroups.apply(this, arguments);
+      }
+
+      return fetchGroups;
+    }()
+  },
+  mutations: {
+    setGroups: function setGroups(state, groups) {
+      state.groups = groups;
+    }
+  },
+  state: {
+    groups: []
+  },
+  getters: {
+    getGroups: function getGroups(state) {
+      return state.groups;
+    }
+  }
+});
 
 /***/ }),
 
