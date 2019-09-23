@@ -27,6 +27,8 @@
                 title: "",
                 body: "",
                 limit: 15,
+                datetimeStart : null,
+                datetimeEnd : null,
                 settings: {
                     maxScrollbarLength: 60
                 }

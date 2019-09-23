@@ -14,4 +14,16 @@ main {
 .empty-button {
     border: none;
     background: none;
+
+    &.btn-primary {
+        border: none !important;
+        background: none !important;
+        padding: 0 !important;
+
+        &:focus,
+        &:active {
+            border: none !important;
+            box-shadow: none !important;
+        }
+    }
 }

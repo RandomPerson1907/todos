@@ -6,8 +6,16 @@
 
 
 require('./bootstrap');
-import VueRouter from "vue-router";
 import router from "./router";
+
+//Styles
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+//Plugins
+import Clipboard from 'v-clipboard';
+import VueRouter from "vue-router";
+import BootstrapVue from 'bootstrap-vue';
 
 //Components
 import SearchTaskComponent from "./components/SearchTaskComponent";
@@ -15,6 +23,8 @@ import MenuComponent from "./components/MenuComponent";
 
 window.Vue = require('vue');
 Vue.use(VueRouter);
+Vue.use(Clipboard);
+Vue.use(BootstrapVue);
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,7 +47,10 @@ import store from "./store";
 
 const app = new Vue({
     el: '#app',
-    components: {SearchTaskComponent, MenuComponent},
+    components: {
+        SearchTaskComponent,
+        MenuComponent,
+    },
     router,
     store
 });

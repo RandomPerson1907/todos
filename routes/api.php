@@ -21,6 +21,7 @@ Route::get('tasks/{type}', function ($type) {
     $tasks = [];
     for($i = 0; $i < 20; $i++) {
         $tasks[] = [
+            "id" => $faker->randomNumber(),
             "title" => $faker->sentence(),
             "body" => $faker->text()
         ];

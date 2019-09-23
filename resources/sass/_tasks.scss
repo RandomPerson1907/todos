@@ -9,8 +9,16 @@
             box-shadow: 0px 0px 5px 2px rgba(0,0,0,.5);
 
             .task__body {
+                user-select: none;
                 padding: 15px;
                 background-color: rgba(255, 255, 255, .85);
+
+                .task__title {
+                    a {
+                        color: rgba(0, 0, 100, 0.7);
+                        text-decoration: none;
+                    }
+                }
 
                 .actions {
                     button {
@@ -34,6 +42,7 @@
                     padding-bottom: 0;
                     max-height: 500px;
                     border-top: 1px solid rgba(0,0,0,.2);
+                    overflow: visible;
                 }
 
                 h4 {
@@ -48,8 +57,12 @@
                     }
                 }
 
-                .vdp-datepicker {
+                .vdatetime {
+                    margin-bottom: 10px;
+                    width: 100%;
+
                     input {
+                        width: 100%;
                         padding: 3px 7px;
                         border: 1px solid rgba(0,0,0,.3);
                         border-radius: 5px;
@@ -64,11 +77,14 @@
                 }
 
                 .priorities {
+                    width: 100%;
                     margin-top: 13px;
 
                     .priority {
+                        width: 25%;
                         border: 1px solid rgba(0,0,0,0);
                         border-radius: 5px;
+                        text-align: center;
                         transition: $transition;
 
                         &.active {
@@ -86,7 +102,13 @@
                 }
 
                 .actions {
+                    width: 100%;
                     margin-top: 15px;
+                    text-align: center;
+
+                    .action {
+                        width: 20%;
+                    }
                 }
 
                 .save {

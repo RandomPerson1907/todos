@@ -10733,6 +10733,18 @@ main {
   background: none;
 }
 
+.empty-button.btn-primary {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.empty-button.btn-primary:focus,
+.empty-button.btn-primary:active {
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .add__task {
   margin: 0px auto 25px auto;
 }
@@ -10767,8 +10779,17 @@ main {
 }
 
 .tasks .tasks__list .task .task__body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.85);
+}
+
+.tasks .tasks__list .task .task__body .task__title a {
+  color: rgba(0, 0, 100, 0.7);
+  text-decoration: none;
 }
 
 .tasks .tasks__list .task .task__body .actions button img {
@@ -10789,6 +10810,7 @@ main {
   padding-bottom: 0;
   max-height: 500px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: visible;
 }
 
 .tasks .tasks__list .task .additional-info h4 {
@@ -10799,7 +10821,13 @@ main {
   height: 25px;
 }
 
-.tasks .tasks__list .task .additional-info .vdp-datepicker input {
+.tasks .tasks__list .task .additional-info .vdatetime {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.tasks .tasks__list .task .additional-info .vdatetime input {
+  width: 100%;
   padding: 3px 7px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -10807,18 +10835,21 @@ main {
   transition: all 0.3s ease-in-out;
 }
 
-.tasks .tasks__list .task .additional-info .vdp-datepicker input:focus {
+.tasks .tasks__list .task .additional-info .vdatetime input:focus {
   border-color: #1d68a7;
   box-shadow: 0px 0px 3px 0px #1d68a7;
 }
 
 .tasks .tasks__list .task .additional-info .priorities {
+  width: 100%;
   margin-top: 13px;
 }
 
 .tasks .tasks__list .task .additional-info .priorities .priority {
+  width: 25%;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
+  text-align: center;
   transition: all 0.3s ease-in-out;
 }
 
@@ -10835,7 +10866,13 @@ main {
 }
 
 .tasks .tasks__list .task .additional-info .actions {
+  width: 100%;
   margin-top: 15px;
+  text-align: center;
+}
+
+.tasks .tasks__list .task .additional-info .actions .action {
+  width: 20%;
 }
 
 .tasks .tasks__list .task .additional-info .save {
