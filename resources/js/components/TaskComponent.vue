@@ -112,7 +112,7 @@
                                     <button
                                         class="empty-button"
                                         title="Перенести в группу"
-                                        @click="moveToGroup"
+                                        @click="showModal(groupModalName)"
                                     >
                                         <img src="/img/icons/move.png" alt="Move to group">
                                     </button>
@@ -142,6 +142,34 @@
                 </div>
             </div>
         </div>
+        <modal
+            height="auto"
+            :name="groupModalName"
+        >
+            <label class="d-flex flex-column justify-content-center container">
+                <h4 class="text-center">Группа</h4>
+                <select
+                    class="form-control"
+                    v-model="task.group"
+                >
+                    <option
+                        v-for="(group, index) in getGroups()"
+                        :key="index"
+                        :value="group.id"
+                    >{{ group.title }}</option>
+                </select>
+            </label>
+            <div class="row">
+                <div class="col-12">
+                    <button
+                        class="empty-button save"
+                        @click="saveGroup"
+                    >
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </modal>
     </div>
 </template>
 
@@ -212,10 +240,13 @@
         computed: {
             taskLink() {
                 return this.$router.resolve({name: 'task', params: {id : this.task.id}}).href;
+            },
+            groupModalName() {
+                return `group-modal-${this.task.id}`;
             }
         },
         async mounted() {
-          console.log(this.getGroups());
+
         },
         methods: {
             ...mapGetters(["getGroups"]),
@@ -233,6 +264,9 @@
                     this.popovers[popoverName].show = false;
                 }, 2000);
             },
+            showModal(name) {
+                this.$modal.show(name);
+            },
             moveTomorrow() {
                 this.popovers.moveTomorrow.text = this.popovers.moveTomorrow.phrases.ok;
                 this.showPopover("moveTomorrow");
@@ -247,19 +281,24 @@
                     } else if (index === priorityIndex) {
                         this.priorities[index].checked = true;
                     }
-                })
+                });
+                this.task.priority = priorityIndex;
             },
             duplicate() {
               console.log("duplicate");
-            },
-            moveToGroup() {
-                console.log("move to group");
+              console.log(this.task);
             },
             deleteTask() {
-                console.log("delete task");
+                console.log("delete task -> " + this.task.id);
             },
             save() {
                 console.log("save");
+                console.log(this.task);
+            },
+            saveGroup() {
+                console.log("save group");
+                console.log(this.task);
+                console.log(this.task.group);
             }
         }
     }

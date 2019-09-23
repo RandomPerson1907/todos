@@ -23,7 +23,9 @@ Route::get('tasks/{type}', function ($type) {
         $tasks[] = [
             "id" => $faker->randomNumber(),
             "title" => $faker->sentence(),
-            "body" => $faker->text()
+            "body" => $faker->text(),
+            "group" => $i,
+            "priority" => rand(1,4)
         ];
     }
 
@@ -34,9 +36,9 @@ Route::get('groups/{slug?}', function ($slug = false) {
     $faker = Faker\Factory::create();
 
     $groups = [];
-    for($i = 0; $i < 8; $i++) {
+    for($i = 0; $i < 20; $i++) {
         $groups[] = [
-            "id" => $faker->randomNumber(),
+            "id" => $i,
             "title" => $faker->sentence()
         ];
     }

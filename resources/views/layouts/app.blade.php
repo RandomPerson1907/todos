@@ -15,7 +15,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+{{--    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">--}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -52,7 +52,7 @@
                 <div class="col-md-3">
                     <div class="add__task d-flex justify-content-center">
                         <button class="add__task__button">
-                            <img src="https://img.icons8.com/nolan/64/000000/joyent.png" style="width: 40px;height: 40px;">Добавить задачу
+                            <!--<img src="https://img.icons8.com/nolan/64/000000/joyent.png" style="width: 40px;height: 40px;">-->Добавить задачу
                         </button>
                     </div>
                     <aside>

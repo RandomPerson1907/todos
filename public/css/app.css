@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
+
+/*@import url('https://fonts.googleapis.com/css?family=Nunito');*/
+
+/*@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,700&display=swap&subset=cyrillic');*/
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10745,6 +10749,20 @@ main {
   box-shadow: none !important;
 }
 
+.save {
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0, 70, 0, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.save:hover {
+  background-color: rgba(0, 150, 0, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .add__task {
   margin: 0px auto 25px auto;
 }
@@ -10873,20 +10891,6 @@ main {
 
 .tasks .tasks__list .task .additional-info .actions .action {
   width: 20%;
-}
-
-.tasks .tasks__list .task .additional-info .save {
-  margin-top: 20px;
-  width: 100%;
-  height: 40px;
-  background-color: rgba(0, 70, 0, 0.5);
-  color: rgba(255, 255, 255, 0.6);
-  transition: all 0.3s ease-in-out;
-}
-
-.tasks .tasks__list .task .additional-info .save:hover {
-  background-color: rgba(0, 150, 0, 0.5);
-  color: rgba(255, 255, 255, 0.9);
 }
 
 * {
