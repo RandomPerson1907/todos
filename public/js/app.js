@@ -1913,8 +1913,51 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-custom-scrollbar */ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js");
-/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-custom-scrollbar */ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js");
+/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2001,22 +2044,88 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+var GROUP_HAS_BEEN_ADDED = 'Группа успешно добавлена';
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MenuComponent",
   components: {
-    vueCustomScrollbar: vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0___default.a
+    vueCustomScrollbar: vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_2___default.a
   },
   data: function data() {
     return {
       showPriority: true,
+      title: "",
+      success: "",
+      errors: [],
+      titleError: false,
       settings: {
         maxScrollbarLength: 60
       }
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(["getGroups", "newGroup"])),
   methods: {
     toggleShowPriority: function toggleShowPriority() {
       this.showPriority = !this.showPriority;
+    },
+    showAddGroupModal: function showAddGroupModal() {
+      this.$modal.show("addGroupModal");
+    },
+    addGroup: function () {
+      var _addGroup = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _this = this;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (this.title.trim().length) {
+                  _context.next = 4;
+                  break;
+                }
+
+                this.titleError = true;
+                _context.next = 7;
+                break;
+
+              case 4:
+                this.clear();
+                _context.next = 7;
+                return this.$store.dispatch("addGroup", this.title.trim()).then(function () {
+                  if (_this.newGroup.result) {
+                    _this.success = GROUP_HAS_BEEN_ADDED;
+                  } else {
+                    _this.errors = _this.newGroup.errors;
+                  }
+
+                  setTimeout(function () {
+                    _this.$modal.hide("addGroupModal");
+                  }, 2000);
+                });
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function addGroup() {
+        return _addGroup.apply(this, arguments);
+      }
+
+      return addGroup;
+    }(),
+    deleteGroup: function deleteGroup(id) {
+      this.$store.dispatch("deleteGroup", id);
+    },
+    clear: function clear() {
+      this.titleError = false;
+      this.success = "";
+      this.errors = [];
     }
   }
 });
@@ -77182,223 +77291,327 @@ var render = function() {
     "vue-custom-scrollbar",
     { staticClass: "scroll-area", attrs: { settings: _vm.settings } },
     [
-      _c("ul", { staticClass: "nav flex-column flex-nowrap" }, [
-        _c(
-          "li",
-          { staticClass: "nav-item active" },
-          [
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: { name: "tasks-all" } } },
-              [_vm._v("Все")]
+      _c(
+        "ul",
+        { staticClass: "nav flex-column flex-nowrap" },
+        [
+          _c(
+            "li",
+            { staticClass: "nav-item active" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "tasks-all" } }
+                },
+                [_vm._v("Все")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item active" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "tasks-past-due" } }
+                },
+                [_vm._v("Просроченные")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "tasks-today" } }
+                },
+                [_vm._v("Сегодня")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "tasks-yesterday" } }
+                },
+                [_vm._v("Вчера")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "tasks-last-7-days" } }
+                },
+                [_vm._v("Последние 7 дней")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item d-flex justify-content-between" }, [
+            _vm._v("\n            Группы "),
+            _c("img", {
+              staticClass: "h-25px add__group__button",
+              attrs: { src: "/img/icons/plus.png", alt: "Add group" },
+              on: { click: _vm.showAddGroupModal }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.getGroups, function(group) {
+            return _c(
+              "li",
+              { staticClass: "nav-item" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-link",
+                    attrs: {
+                      to: { name: "groups", params: { group: group.slug } }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(group.title) +
+                        "\n            "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("span", { staticClass: "group__delete" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "circled",
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteGroup(group.id)
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/img/icons/minus.png",
+                          alt: "Delete group"
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ],
+              1
             )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item active" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "tasks-past-due" } }
-              },
-              [_vm._v("Просроченные")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "tasks-today" } }
-              },
-              [_vm._v("Сегодня")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "tasks-yesterday" } }
-              },
-              [_vm._v("Вчера")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "tasks-last-7-days" } }
-              },
-              [_vm._v("Последние 7 дней")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("li", { staticClass: "nav-item" }, [
-          _vm._v("\n            Группы\n        ")
-        ]),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: { name: "groups", params: { group: "uncategorized" } }
-                }
-              },
-              [_vm._v("Без группы")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "groups", params: { group: "work" } } }
-              },
-              [_vm._v("Работа")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "groups", params: { group: "studying" } } }
-              },
-              [_vm._v("Учеба")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass: "nav-item section-item",
-            on: { click: _vm.toggleShowPriority }
-          },
-          [_vm._v("\n            Приоритет\n        ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item", class: { active: _vm.showPriority } },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: {
-                    name: "priority",
-                    params: { priority: "unprioritized" }
+          }),
+          _vm._v(" "),
+          _c(
+            "li",
+            {
+              staticClass: "nav-item section-item",
+              on: { click: _vm.toggleShowPriority }
+            },
+            [_vm._v("\n            Приоритет\n        ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item", class: { active: _vm.showPriority } },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: {
+                    to: {
+                      name: "priority",
+                      params: { priority: "unprioritized" }
+                    }
                   }
+                },
+                [_vm._v("Без приоритета")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item", class: { active: _vm.showPriority } },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: {
+                    to: {
+                      name: "priority",
+                      params: { priority: "unimportant" }
+                    }
+                  }
+                },
+                [_vm._v("Малозначимые")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item", class: { active: _vm.showPriority } },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: {
+                    to: { name: "priority", params: { priority: "important" } }
+                  }
+                },
+                [_vm._v("Важные")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item", class: { active: _vm.showPriority } },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: {
+                    to: { name: "priority", params: { priority: "urgent" } }
+                  }
+                },
+                [_vm._v("Срочные")]
+              )
+            ],
+            1
+          )
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("modal", { attrs: { height: "auto", name: "addGroupModal" } }, [
+        _c(
+          "label",
+          {
+            staticClass: "d-flex flex-column justify-content-center container"
+          },
+          [
+            _c("h4", { staticClass: "text-center" }, [
+              _vm._v("Добавить новую группу")
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.errors, function(error) {
+              return _c(
+                "div",
+                { staticClass: "errors" },
+                _vm._l(error, function(errorMessage) {
+                  return _c(
+                    "div",
+                    {
+                      staticClass: "alert alert-warning",
+                      attrs: { role: "alert" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(errorMessage) +
+                          "\n                "
+                      )
+                    ]
+                  )
+                }),
+                0
+              )
+            }),
+            _vm._v(" "),
+            _vm.success
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "alert alert-success",
+                    attrs: { role: "alert" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.success) +
+                        "\n            "
+                    )
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.title,
+                  expression: "title"
                 }
-              },
-              [_vm._v("Без приоритета")]
-            )
+              ],
+              staticClass: "form-control",
+              class: { error: _vm.titleError },
+              attrs: { type: "text", placeholder: "Имя новой группы..." },
+              domProps: { value: _vm.title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.title = $event.target.value
+                }
+              }
+            })
           ],
-          1
+          2
         ),
         _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item", class: { active: _vm.showPriority } },
-          [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12" }, [
             _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: { name: "priority", params: { priority: "unimportant" } }
-                }
-              },
-              [_vm._v("Малозначимые")]
+              "button",
+              { staticClass: "empty-button save", on: { click: _vm.addGroup } },
+              [_vm._v("\n                    Сохранить\n                ")]
             )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item", class: { active: _vm.showPriority } },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: { name: "priority", params: { priority: "important" } }
-                }
-              },
-              [_vm._v("Важные")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item", class: { active: _vm.showPriority } },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: { name: "priority", params: { priority: "urgent" } }
-                }
-              },
-              [_vm._v("Срочные")]
-            )
-          ],
-          1
-        )
+          ])
+        ])
       ])
-    ]
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -97776,19 +97989,105 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return fetchGroups;
-    }()
+    }(),
+    addGroup: function () {
+      var _addGroup = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(_ref3, title) {
+        var commit, getters, dispatch;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                commit = _ref3.commit, getters = _ref3.getters, dispatch = _ref3.dispatch;
+                return _context2.abrupt("return", new Promise(function (resolve, reject) {
+                  axios.post("/api/groups", {
+                    "title": title
+                  }).then(function (response) {
+                    if (response.data.result) {
+                      commit("addGroup", response.data);
+                    } else {
+                      commit("addGroup", {
+                        result: false,
+                        errors: response.data.errors
+                      });
+                    }
+
+                    resolve();
+                  })["catch"](function (error) {
+                    commit("addGroup", {
+                      result: false,
+                      errors: [error]
+                    });
+                    reject();
+                  });
+                }));
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function addGroup(_x3, _x4) {
+        return _addGroup.apply(this, arguments);
+      }
+
+      return addGroup;
+    }(),
+    deleteGroup: function deleteGroup(_ref4, id) {
+      var commit = _ref4.commit,
+          getters = _ref4.getters,
+          dispatch = _ref4.dispatch;
+      return new Promise(function (resolve, reject) {
+        axios["delete"]("/api/groups/".concat(id), {
+          "id": id
+        }).then(function (response) {
+          if (response.data.result) {
+            commit("deleteGroup", id);
+          }
+
+          resolve();
+        })["catch"](function (error) {
+          reject(error);
+        });
+      });
+    }
   },
   mutations: {
     setGroups: function setGroups(state, groups) {
       state.groups = groups;
+    },
+    addGroup: function addGroup(state, response) {
+      state.newGroup = {
+        result: response.result,
+        errors: response.errors || []
+      };
+
+      if (typeof response.group !== "undefined") {
+        state.groups.push(response.group);
+      }
+    },
+    deleteGroup: function deleteGroup(state, id) {
+      state.groups.forEach(function (item, index) {
+        if (item.id === id) {
+          state.groups.splice(index, 1);
+        }
+      });
     }
   },
   state: {
+    newGroup: {},
     groups: []
   },
   getters: {
     getGroups: function getGroups(state) {
       return state.groups;
+    },
+    newGroup: function newGroup(state) {
+      return state.newGroup;
     }
   }
 });

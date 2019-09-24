@@ -41,3 +41,21 @@ main {
         color: rgba(255,255,255,.9);
     }
 }
+
+.h-25px {
+    height: 25px;
+}
+
+.add__group__button {
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+}
+
+.error {
+    border: 1px solid rgba(255, 0, 0, 0.7) !important;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.4) !important;
+}

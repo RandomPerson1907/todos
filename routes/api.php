@@ -32,19 +32,9 @@ Route::get('tasks/{type}', function ($type) {
     return response()->json($tasks);
 });
 
-Route::get('groups/{slug?}', function ($slug = false) {
-    $faker = Faker\Factory::create();
-
-    $groups = [];
-    for($i = 0; $i < 20; $i++) {
-        $groups[] = [
-            "id" => $i,
-            "title" => $faker->sentence()
-        ];
-    }
-
-    return response()->json($groups);
-});
+Route::get('groups/{slug?}', "GroupController@index");
+Route::post("groups", "GroupController@store");
+Route::delete("groups/{id}", "GroupController@delete");
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
