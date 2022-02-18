@@ -9,7 +9,7 @@ use Cocur\Slugify\Slugify;
 class GroupController extends Controller
 {
     public function index($slug = false) {
-        return response()->json($slug ? Group::getBySlug($slug) : Group::all());
+        return response()->json($slug ? Group::getBySlug($slug) : Group::get());
     }
 
     public function store(Request $request)
