@@ -27,7 +27,7 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.2",
-        "luxon": "^1.19.2",
+        "luxon": "^2.5.2",
         "v-clipboard": "^2.2.2",
         "velocity": "^0.7.2",
         "vue-custom-scrollbar": "^1.1.0",
